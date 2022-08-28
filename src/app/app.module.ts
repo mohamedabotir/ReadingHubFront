@@ -1,5 +1,4 @@
- import { CallInfoDialogComponents } from './dialog/callinfo-dialog.component';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,7 +17,7 @@ import {MatInputModule} from "@angular/material/input"
   declarations: [
     AppComponent,
     CommunicateComponent,
-    CallInfoDialogComponents
+
   ],
   imports: [
     BrowserModule,

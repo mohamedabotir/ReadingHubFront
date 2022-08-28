@@ -1,0 +1,107 @@
+.container{
+background-color: aliceblue;
+}
+.nav{
+padding-left: 15px;
+padding-right: 15px;
+margin-left: auto;
+margin-right: auto;
+}
+/*Small*/
+@media (min-width:768 ) {
+  .nav{
+    width: 750px;
+  }
+}
+
+/*Medium*/
+@media (min-width:992 ) {
+  .nav{
+    width: 970px;
+  }
+}
+/*Large*/
+@media (min-width:1200 ) {
+  .nav{
+    width: 1170;
+  }
+}
+.container .nav{
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+}
+
+.nav .links{
+  position: relative;
+}
+.action .expander{
+  width: 50px;
+display: flex;
+flex-wrap:wrap ;
+justify-content: flex-end;
+}
+.action .expander span{
+background-color: rgb(41, 39, 39);
+margin-bottom: 5px;
+height: 3px;
+}
+.action .expander span:first-child{
+
+  width: 100%;
+}
+.action .expander span:nth-child(2){
+transition: 0.3s;
+
+  width: 70%;
+}
+.action .expander span:last-child{
+
+  width: 100%;
+}
+
+.action .expander:hover span:nth-child(2){
+    width: 100%;
+  }
+  .action .user-ops ul{
+    list-style: none;
+    background-color: #ede8e8;
+    position: absolute;
+    min-width: 102px;
+    margin: 0 20px 0 0;
+    padding: 0;
+    right: 0;
+    display: none;
+}
+
+
+.user-ops ul  a{
+  text-decoration: none;
+  pad: 15px;
+  display: block;
+   color: #333;
+   transition: 0.3s;
+}
+
+.user-ops ul  a:hover{
+  padding-left: 10px;
+}
+
+
+.user-ops ul li:not(:last-child) a{
+  border-bottom: 1px solid #333;
+}
+.action:hover .user-ops ul {
+  display: block;
+}
+.links ul{
+display: flex;
+justify-content: space-around;
+  list-style: none;
+  }
+.links ul li a{
+  color: #333;
+  margin-left: 15px;
+  text-decoration: none;
+  display: inline;
+}
