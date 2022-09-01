@@ -1,5 +1,5 @@
 :root{
-  --main-color:rgb(200, 233, 233);
+  accent-color:rgb(200, 233, 233);
 }
 *{
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -7,18 +7,30 @@
 
 }
 .container{
-background-color: aliceblue;
+  background-color: #ffff;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+
 }
 .nav{
 padding-left: 15px;
 padding-right: 15px;
 margin-left: auto;
 margin-right: auto;
+
 }
 /*Small*/
 @media (min-width:768 ) {
   .nav{
     width: 750px;
+  }
+  .features .container{
+    padding-left: 0;
   }
 }
 
@@ -39,6 +51,7 @@ margin-right: auto;
   display: flex;
   justify-content: space-around;
   align-items:center;
+
 }
 .container .nav{
   display: flex;
@@ -84,8 +97,6 @@ float: right;
     list-style: none;
     background-color: #ede8e8;
     position: absolute;
-    /* margin: 0 207px 0 0; */
-    /* padding: 12px; */
     display: none;
     top: 0.7em;
     right: 0;
@@ -140,7 +151,7 @@ justify-content: space-around;
     left: 50%;
     position: absolute;
     transform: translate(-50% ,-50%);
-    color: var(--main-color);
+    color: rgb(200, 233, 233);
     max-width: 380px;
     width: 100%;
 
@@ -151,3 +162,87 @@ justify-content: space-around;
   line-height: 1.9;
   font-weight: normal;
 }
+
+
+.features{
+  background-color: #F5EDDC;
+}
+.features .container{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #F5EDDC;
+  display: grid;
+   grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+   grid-gap: 20;
+   padding-left: 64px;
+   padding-right: 35px;
+
+}
+
+.features .container .feature {
+  padding: 20px;
+ text-align: center;
+}
+
+.features .container .feature h3{
+  min-width: 388px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.features .container .feature p{
+  line-height: 1.8;
+  font-weight: 300;
+}
+.ng-fa-icon {
+  color: #b3407a;
+  left: 5%;
+  position: relative;
+}
+.section-header{
+  text-align: center;
+  color: #404548;
+}
+.splitter{
+  border-bottom: 1px black solid;
+  margin-top: 10px;
+  width: 252px;
+  margin-top: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+.books{
+  background-color: #CFD2CF;
+  right: 0;
+
+}
+.books .container{
+  background-color: #CFD2CF;
+   display: grid;
+   grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+   padding-left: 190px;
+   padding-right: 35px;
+
+
+  }
+
+  .books .container .book h3{
+    font-weight: 500;
+  }
+
+  .about{
+    padding-left: 10px;
+    background-color: #FA9494;
+    position: relative;
+  line-height: 1.2;
+  text-align: center;
+  }
+
+.contact p{
+  display: inline-block;
+    position: relative;
+    left: 5vw;
+}
+
+
