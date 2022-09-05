@@ -118,23 +118,49 @@
 <div class="contact-form">
 <form action="">
   <div class="row">
-    <input placeholder="firstname" name="fname">
-    <input placeholder="lastname" name="lname">
+
+    <mat-form-field appearance="fill">
+      <mat-label>FirstName</mat-label>
+      <input matInput  placeholder="Enter FirstName">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput  placeholder="Enter LastName">
+    </mat-form-field>
+  </div>
+  <div class="row" >
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput  placeholder="Enter Email">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Phone</mat-label>
+      <input matInput  placeholder="Enter Phone">
+    </mat-form-field>
   </div>
   <div class="row">
-    <input placeholder="Email" name="email">
-    <input placeholder="Phone" name="phone">
+    <mat-form-field appearance="fill">
+      <mat-label>Address</mat-label>
+      <input matInput  placeholder="Enter Address">
+    </mat-form-field>
   </div>
   <div class="row">
-    <input placeholder="Address" name="address">
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Complaint</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
   </div>
   <div class="row">
-    <textarea name="" id="" cols="30" rows="2" placeholder="Complaint"></textarea>
-  </div>
-  <div class="row">
-    <input type="submit" name="Submit">
+    <button mat-button>Submit</button>
+
   </div>
 </form>
 </div>
 </div>
 <!--End Contact Section-->
+
+<div class="copyright">
+  <h4>All Copy Right &copy; Mohamed Abdalsalam</h4>
+</div>

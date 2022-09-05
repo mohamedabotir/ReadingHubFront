@@ -245,7 +245,10 @@ justify-content: space-around;
     left: 5vw;
 }
 
-
+.complaint{
+  background-color: #333;
+  padding: 50px;
+}
 .complaint {
 position: relative;
 }
@@ -265,4 +268,16 @@ margin-left: calc(100% - 10px - 77%);
   margin-top: 5px;
 }
 
+.mat-form-field{
+  margin-right: 20px;
+  width: 350px;
+}
 
+button.mat-focus-indicator.mat-button.mat-button-base {
+  background-color: aliceblue;
+}
+
+.copyright{
+  background-color: #4e4949cf;
+  text-align: center;
+}
