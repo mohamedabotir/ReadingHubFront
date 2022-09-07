@@ -1,0 +1,151 @@
+*{
+  font-family: 'Noto Sans', sans-serif;
+
+}
+.bar
+,.content
+,.persistent-content{
+  padding-top: 5px;
+  height: calc(100vh - 5px);
+}
+.container {
+   display: flex;
+   grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+
+  justify-self: left;
+
+}
+
+.bar {
+  font-size:medium;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 110px;
+    background: hsl(261deg 100% 79%);
+    position: relative;
+    left: 0;
+    padding-left: 20px;
+    width: 120px;
+    border-bottom-right-radius: 5px solid;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.bar .brand{
+  font-size: large;
+  color: #5a34a3;
+  left: 0;
+}
+.bar .content{
+  color: aliceblue;
+
+}
+.bar .content div{
+  padding-top: 50px;
+}
+
+.logout {
+  position: absolute;
+  bottom: 0;
+  right: 30%;
+  color: rgba(255, 255, 255, 0.699);
+}
+
+.active-link{
+  background-color: aliceblue;
+  color: #5a34a3;
+}
+
+
+.source-content {
+  width: calc(100vw - 120px - 25vw);
+  padding-left: 8vw;
+    padding-right: 8vw;
+}
+.persistant-content{
+  width: 25vw
+}
+.search {
+  width: 70%;
+}
+.search .ng-fa-icon{
+  padding-right: 5px;
+  color: rgb(143, 136, 127);
+}
+.search input{
+  border-color: rgb(143, 136, 127);
+  border-radius: 5px;
+  padding: 7px;
+  padding-right: 35%;
+}
+
+
+.date {
+  width: 16px;
+  white-space:nowrap;
+}
+
+.books-header{
+  color: hsl(211deg 14% 55%);
+  padding-top: 25px;
+  display: flex;
+  justify-content:space-between;
+}
+
+.books img{
+  width: 150px;
+  height: 150px;
+}
+
+.myBooks {
+  top: 5px;
+  padding-left: 9vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+  justify-content:space-around;
+}
+.myBooks .books {
+  padding-left: 5px;
+  padding-top: 6vh;
+  margin-left: -8vw;
+}
+
+
+
+
+@media (min-width : 768px) {
+  .center-content div{
+    flex-direction: row;
+    padding-top: 10px;
+    }
+}
+
+.center-content{
+padding-top: 20px;
+display: grid;
+ grid-template-columns: repeat(auto-fill,minmax(20vw,1fr));
+
+}
+.center-content div{
+  background-color: hsl(0deg 34% 94%);
+  border-radius: 10%;
+  width: 20vw;
+}
+.center-content div .author{
+  display: flex;
+  justify-content: space-between;
+}
+.authors .author img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  vertical-align:middle;
+}
+.author .icon{
+padding-left: 10%;
+padding-top: 10%;
+}
+.author .author-name {
+  padding-top: 10%;
+}
+

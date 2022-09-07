@@ -1,0 +1,89 @@
+<div class="container">
+<div class="bar">
+  <div class="brand">
+    <fa-icon [icon]="book"></fa-icon>
+    ReadingHub
+  </div>
+  <div class="content">
+    <a routerLinkActive='active-link'>
+
+      <div >
+        <fa-icon [icon]="feed"></fa-icon> Feed
+      </div>
+    </a>
+    <div >
+      <fa-icon [icon]="favorite"></fa-icon>MyFavorite
+    </div>
+    <div>
+      <fa-icon [icon]="bookIcon"></fa-icon> MyBooks
+    </div>
+    <div >
+      <fa-icon [icon]="explore"></fa-icon>Explore
+    </div>
+  </div>
+
+  <div class="logout">
+   <fa-icon [icon]="lock"></fa-icon>Logout
+  </div>
+</div>
+<div class="source-content">
+  <div class="header">
+    <div class="search">
+     <fa-icon [icon]="search"></fa-icon>
+     <input type="text" placeholder="Search ...">
+     <span class="date">{{date |date:"short"}}</span>
+    </div>
+
+  </div>
+  <div class="books-header">
+    <h2>My Books</h2>
+    <div class="more">More <fa-icon [icon]="arrow"></fa-icon></div>
+  </div>
+  <div class="myBooks">
+
+    <div class="books">
+      <img src="../../assets/imgs/placeholder.png" alt="">
+    </div>
+    <div class="books">
+      <img src="../../assets/imgs/placeholder.png" alt="">
+    </div>
+    <div class="books">
+      <img src="../../assets/imgs/placeholder.png" alt="">
+    </div>
+  </div>
+
+  <div class="center-content">
+    <div class="authors">
+      <h3>Popular Author</h3>
+
+
+      <div class="author">
+        <div>
+          <img src="../../assets/imgs/placeholder.png" alt="">
+        </div>
+        <div class="author-name">
+          AutherName
+        </div>
+        <div class="icon">
+        <fa-icon [icon]="reader"></fa-icon>
+        </div>
+      </div>
+      <div class="more">More</div>
+    </div>
+    <div class="reading">
+       <h3>Keep Reading</h3>
+       <div class="progress">
+        <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+
+       </div>
+       <div class="more">More</div>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="persistant-content">
+ persistent
+</div>
+</div>
