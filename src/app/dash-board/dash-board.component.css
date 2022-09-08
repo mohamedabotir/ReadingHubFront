@@ -238,3 +238,18 @@ color: hsl(261deg 100% 79%);
     padding-bottom: 20px;
     }
 }
+
+.persistant-content .wrapper {
+  align-items: center;
+  background: #000;
+  border-radius: 15px;
+  display: flex;
+  font-family: Raleway,sans-serif;
+  height: 130px;
+  width: 250px;
+  padding-bottom: 10px;
+}
+
+.persistant-content{
+  display: flex;
+}

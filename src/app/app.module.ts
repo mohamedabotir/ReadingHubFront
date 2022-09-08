@@ -15,7 +15,7 @@ import {MatInputModule} from "@angular/material/input"
 import {FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DashBoardComponent } from './dash-board/dash-board.component';
 import { LandingComponent } from './landing/landing.component';
-
+import { AngMusicPlayerModule } from  'ang-music-player';
 
  @NgModule({
   declarations: [
@@ -37,7 +37,8 @@ import { LandingComponent } from './landing/landing.component';
     ClipboardModule,
     MatSnackBarModule,
     FontAwesomeModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    AngMusicPlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
