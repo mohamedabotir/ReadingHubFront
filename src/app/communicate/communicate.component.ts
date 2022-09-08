@@ -2,6 +2,7 @@ import {  PeerJSOption } from './../../../node_modules/peerjs/dist/types.d';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
    import Peer from 'peerjs';
  import { v4 as uuidv4 } from 'uuid';
+import { StreamService } from '../Services/stream.service';
 
 @Component({
   selector: 'app-communicate',
@@ -12,35 +13,23 @@ export class CommunicateComponent implements OnInit {
 
 
 
-  audioList = [
-    {
-      url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-      title: "Smaple 1",
-      cover: "https://i1.sndcdn.com/artworks-000249294066-uow7s0-t500x500.jpg"
-    },
-    {
-      url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
-      title: "Sample 2",
-      cover: "https://i1.sndcdn.com/artworks-000249294066-uow7s0-t500x500.jpg"
-    },
-    {
-      url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
-      title: "Sample 3",
-      cover: "https://i1.sndcdn.com/artworks-000249294066-uow7s0-t500x500.jpg"
-    }
-  ];
+
 
   @ViewChild('remoteVideo') remoteVideo!: ElementRef<HTMLAudioElement>;
-constructor(){
+constructor(public streams:StreamService){
   this.id = this.initPeer();
 }
 
 connectionCode=""
-
+public connections!:[];
 
 join(): void{
-  if(this.connectionCode.length>1)
-   this.call(this.connectionCode);
+  if(this.connectionCode.length>1){
+    this.streams.buildConnection().then(()=>{
+      this.streams.ConnectStream(this.connectionCode);
+    })
+    this.call(this.connectionCode);
+  }
 }
 
   //peer = new Peer();
@@ -76,12 +65,10 @@ peer!:Peer;
 id="";
 
 ngOnInit(): void {
-this.id = this.initPeer();
-console.log(this.initPeer());
 }
 
 call(connectionId:string): void {
-  console.log("s")
+
 navigator.mediaDevices.getUserMedia({video:false,audio:true}).then((stream)=>{
 
   console.log(this.id);
@@ -101,12 +88,15 @@ call.on('stream', (remoteStream) => {
 
 }
 
-answer(): void{
+ answer(){
+ this.streams.buildConnection().then(()=>{
+  console.log(this.id);
+  this.streams.CreateRoom(this.id);
+});
 console.log("answer");
       this.peer.on('call', (call) => {
 
       navigator.mediaDevices.getUserMedia({video:false,audio:true}).then((stream)=>{
-
 
           call.answer(stream); // Answer the call with an A/V stream.
           call.on('stream', (remoteStream)=> {
@@ -118,8 +108,26 @@ console.log("answer");
       });
 });
 }
+getConnections(){
 
+
+  this.streams.getAllConnection().then(()=>{
+
+    this.streams.streams.asObservable().subscribe(d=>{
+      this.connections = d;
+      console.log(this.connections);
+    })
+  });
 }
+getAll(){
+  console.log(this.connections);
+}
+listen(connection:any){
+console.log(connection);
+}
+}
+
+
 
 
 

@@ -1,11 +1,15 @@
 <button (click)="answer()">Start</button>
 <button (click)="join()">Join</button>
 <input placeholder="Call Id" type="text" [(ngModel)]="connectionCode">
-<div id="video-wrapper">
-  <audio #remoteVideo id="remote-video" poster="./assets/video-placeholder.jpg" autoplay playsinline></audio>
+<div >
+  <audio #remoteVideo id="remote-video"  autoplay ></audio>
+ </div>
+ <button class="connections" (click)="getConnections()">GetConnections</button>
+ <button class="connections" (click)="getAll()">GetAll</button>
+ <div *ngFor="let podcasts of connections">
+  <div (click)="listen(podcasts)">{{podcasts}}</div>
+  <hr>
  </div>
 
- <div class="persistant-content">
-  <ang-music-player [audioList] = audioList width="250px" style="padding-bottom:10px"></ang-music-player>
 
-</div>
+
