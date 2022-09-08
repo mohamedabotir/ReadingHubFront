@@ -4,6 +4,7 @@
 }
 h3{
   font-size: larger;
+
 }
 .bar
 ,.content
@@ -64,7 +65,10 @@ h3{
   width: calc(100vw - 120px - 25vw);
   padding-left: 8vw;
     padding-right: 8vw;
+    background-color: #dddddd;
 }
+
+
 .persistant-content{
   width: 25vw
 }
@@ -86,6 +90,7 @@ h3{
 .date {
   width: 16px;
   white-space:nowrap;
+  color: hsl(211deg 14% 55%);
 }
 
 .books-header{
@@ -116,27 +121,26 @@ h3{
 
 
 
-@media (min-width : 768px) {
-  .center-content div{
-    flex-direction: row;
-    padding-top: 10px;
-    }
-}
+
 
 .center-content{
-  padding: 50px;
 padding-top: 20px;
 display: grid;
  grid-template-columns: repeat(auto-fill,minmax(20vw,1fr));
 
 }
+.center-content h3{
+  text-align: center;
+}
 .center-content div{
+
   background-color: hsl(0deg 34% 94%);
   border-radius: 10%;
   width: 20vw;
 }
 .center-content div .author{
   display: flex;
+  flex-direction: row  ;
   justify-content: space-between;
 }
 .authors .author img{
@@ -182,4 +186,55 @@ color: hsl(261deg 100% 79%);
   transition: opacity 250ms linear;
   width: 75%;
   background-color: hsl(261deg 100% 79%);
+}
+
+.reading-info{
+  position: relative;
+  margin-top: 25vh;
+  border-radius: 10px;
+}
+.reading-info .container{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+  justify-content: space-between;
+}
+.reading-info .container .ng-fa-icon{
+ color: hsl(261deg 100% 79%);
+ padding-top: 1.6vw;
+ padding-right:5px ;
+}
+.reading-info .container div{
+  background-color: aliceblue;
+  height: 7vh;
+}
+.reading-info .container div:not(:last-child){
+ margin-right: 5px;
+}
+
+.reading-info .container div .container div .number{
+  padding: 0;
+  margin: 0;
+
+}
+.reading-info .container div .container div .type
+{
+  padding: 0;
+  margin: 0;
+  color: hsl(211deg 14% 55%);
+}
+
+.reading-info .container div .container{
+  text-align: center;
+ display: flex;
+
+}
+@media (min-width : 480px) {
+
+
+    .reading-info .container div{
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    }
 }

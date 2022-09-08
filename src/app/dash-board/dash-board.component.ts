@@ -8,6 +8,10 @@ import { faExplosion } from '@fortawesome/free-solid-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faBookReader } from '@fortawesome/free-solid-svg-icons';
+import { faBookOpenReader } from '@fortawesome/free-solid-svg-icons';
+import { faAward } from '@fortawesome/free-solid-svg-icons';
+import { faPager } from '@fortawesome/free-solid-svg-icons';
+import { faBarsProgress } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-dash-board',
   templateUrl: './dash-board.component.html',
@@ -25,6 +29,10 @@ export class DashBoardComponent implements OnInit {
   search = faSearch;
   arrow = faArrowRight;
   reader = faBookReader;
+  deadBook = faBookOpenReader;
+  author = faAward;
+  page = faPager;
+  progress = faBarsProgress;
   date = new Date();
   ngOnInit(): void {
   }
