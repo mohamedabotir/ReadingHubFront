@@ -6,7 +6,7 @@
   font-size:30px;
 
 }
-.container{
+.langing-container{
   background-color: #ffff;
   padding-left: 15px;
   padding-right: 15px;
@@ -29,7 +29,7 @@ margin-right: auto;
   .nav{
     width: 750px;
   }
-  .features .container{
+  .features .langing-container{
     padding-left: 0;
   }
 }
@@ -47,13 +47,13 @@ margin-right: auto;
   }
 }
 
-.container .nav .links{
+.langing-container .nav .links{
   display: flex;
   justify-content: space-around;
   align-items:center;
 
 }
-.container .nav{
+.langing-container .nav{
   display: flex;
   justify-content: space-around;
   align-items:center;
@@ -167,7 +167,7 @@ justify-content: space-around;
 .features{
   background-color: #F5EDDC;
 }
-.features .container{
+.features .langing-container{
   padding-top: 30px;
   padding-bottom: 30px;
   background-color: #F5EDDC;
@@ -179,18 +179,18 @@ justify-content: space-around;
 
 }
 
-.features .container .feature {
+.features .langing-container .feature {
   padding: 20px;
  text-align: center;
 }
 
-.features .container .feature h3{
+.features .langing-container .feature h3{
   min-width: 388px;
   width: 100%;
   font-weight: bold;
 }
 
-.features .container .feature p{
+.features .langing-container .feature p{
   line-height: 1.8;
   font-weight: 300;
 }
@@ -217,7 +217,7 @@ justify-content: space-around;
   right: 0;
 
 }
-.books .container{
+.books .langing-container{
   background-color: #CFD2CF;
    display: grid;
    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
@@ -227,7 +227,7 @@ justify-content: space-around;
 
   }
 
-  .books .container .book h3{
+  .books .langing-container .book h3{
     font-weight: 500;
   }
 
@@ -277,6 +277,7 @@ margin-left: calc(100% - 10px - 77%);
 
 button.mat-focus-indicator.mat-button.mat-button-base {
   background-color: aliceblue;
+  width: 150px;
 }
 
 .copyright{

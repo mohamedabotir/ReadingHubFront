@@ -1,3 +1,18 @@
-audio {
-  display: block !important;
+audio{
+  width: 250px;
+}
+*{
+  padding-top: 5px;
+}
+.playlists{
+ margin-top: 5px;
+  border: 0;
+  border-style: solid;
+  border-color: blueviolet;
+  border-bottom: 1px solid blueviolet;
+  border-left: 1px solid blueviolet;
+  border-right: 1px solid blueviolet;
+  height: 300px;
+  overflow: scroll;
+  scroll-behavior: smooth;
 }

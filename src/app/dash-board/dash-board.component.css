@@ -12,10 +12,9 @@ h3{
   padding-top: 5px;
   height: calc(100vh - 5px);
 }
-.container {
+.dash-container {
    display: flex;
    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
-
   justify-self: left;
 
 }
@@ -164,7 +163,7 @@ color: hsl(261deg 100% 79%);
   border-radius: 5%;
   vertical-align:middle;
 }
-.progress .container{
+.progress .dash-container{
  width: 50px;
 }
 .progress{
@@ -193,39 +192,39 @@ color: hsl(261deg 100% 79%);
   margin-top: 25vh;
   border-radius: 10px;
 }
-.reading-info .container{
+.reading-info .dash-container{
   position: relative;
   display: flex;
   flex-wrap: wrap;
   grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
   justify-content: space-between;
 }
-.reading-info .container .ng-fa-icon{
+.reading-info .dash-container .ng-fa-icon{
  color: hsl(261deg 100% 79%);
  padding-top: 1.6vw;
  padding-right:5px ;
 }
-.reading-info .container div{
+.reading-info .dash-container div{
   background-color: aliceblue;
   height: 7vh;
 }
-.reading-info .container div:not(:last-child){
+.reading-info .dash-container div:not(:last-child){
  margin-right: 5px;
 }
 
-.reading-info .container div .container div .number{
+.reading-info .dash-container div .dash-container div .number{
   padding: 0;
   margin: 0;
 
 }
-.reading-info .container div .container div .type
+.reading-info .dash-container div .dash-container div .type
 {
   padding: 0;
   margin: 0;
   color: hsl(211deg 14% 55%);
 }
 
-.reading-info .container div .container{
+.reading-info .dash-container div .dash-container{
   text-align: center;
  display: flex;
 
@@ -233,7 +232,7 @@ color: hsl(261deg 100% 79%);
 @media (min-width : 480px) {
 
 
-    .reading-info .container div{
+    .reading-info .dash-container div{
     margin-bottom: 20px;
     padding-bottom: 20px;
     }
@@ -251,5 +250,19 @@ color: hsl(261deg 100% 79%);
 }
 
 .persistant-content{
+  display: flex;
+  flex-direction: column;
+
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  gap: 110px;
+}
+
+.persistent-header{
+  padding-bottom: 10px;
+  justify-self: center;
+}
+.communicate{
+  height: 500px;
+  align-items:flex-end;
   display: flex;
 }

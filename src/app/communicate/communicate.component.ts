@@ -1,4 +1,4 @@
-import {  PeerJSOption } from './../../../node_modules/peerjs/dist/types.d';
+import {  DataConnection, PeerJSOption } from './../../../node_modules/peerjs/dist/types.d';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
    import Peer from 'peerjs';
  import { v4 as uuidv4 } from 'uuid';
@@ -22,16 +22,24 @@ constructor(public streams:StreamService){
 
 connectionCode=""
 public connections!:[];
-
+currentConncetion!:DataConnection;
+created = false;
 join(): void{
   if(this.connectionCode.length>1){
-    this.streams.buildConnection().then(()=>{
+
+
+    if(this.isClosed){
+     this.peer.reconnect();
+     console.log('reconnect');
+    }else{
+
+      //this.initPeer();
       this.streams.ConnectStream(this.connectionCode);
-    })
-    this.call(this.connectionCode);
+      this.call(this.connectionCode);
+    }
   }
 }
-
+isClosed = false;
   //peer = new Peer();
 peer!:Peer;
   public initPeer(): string {
@@ -65,15 +73,23 @@ peer!:Peer;
 id="";
 
 ngOnInit(): void {
+  this.streams.buildConnection();
+  this.peer.on('close',()=>{
+
+    console.log('being close');
+  })
 }
 
 call(connectionId:string): void {
-
+  if(this.created){
+    this.initPeer();
+  }
+this.created = true;
 navigator.mediaDevices.getUserMedia({video:false,audio:true}).then((stream)=>{
 
   console.log(this.id);
-  const connection = this.peer.connect(connectionId);
-  connection.on('error', err => {
+  this.currentConncetion = this.peer.connect(connectionId);
+  this.currentConncetion.on('error', err => {
       console.error(err);
 
   });
@@ -89,10 +105,7 @@ call.on('stream', (remoteStream) => {
 }
 
  answer(){
- this.streams.buildConnection().then(()=>{
-  console.log(this.id);
   this.streams.CreateRoom(this.id);
-});
 console.log("answer");
       this.peer.on('call', (call) => {
 
@@ -123,7 +136,12 @@ getAll(){
   console.log(this.connections);
 }
 listen(connection:any){
-console.log(connection);
+this.call(connection);
+}
+cancel(){
+  this.isClosed = true;
+  this.peer.disconnect();
+  this.remoteVideo.nativeElement.srcObject = null;
 }
 }
 

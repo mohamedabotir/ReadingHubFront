@@ -1,4 +1,4 @@
-<div class="container">
+<div class="dash-container">
 <div class="bar">
   <div class="brand">
     <fa-icon [icon]="book"></fa-icon>
@@ -74,7 +74,7 @@
        <h3>Keep Reading</h3>
 
        <div class="progress">
-        <div class="container">
+        <div class="dash-container">
           <img src="../../assets/imgs/placeholder.png" alt="">
         </div>
         <div class="book-info">
@@ -89,10 +89,10 @@
   </div>
 
  <div class="reading-info">
-  <div class="container">
+  <div class="dash-container">
 
     <div class="read-books">
-      <div class="container">
+      <div class="dash-container">
         <fa-icon [icon]="deadBook"></fa-icon>
         <div>
           <p class="number">15</p>
@@ -101,7 +101,7 @@
       </div>
     </div>
     <div class="read-authors">
-      <div class="container">
+      <div class="dash-container">
         <fa-icon [icon]="author"></fa-icon>
         <div>
 
@@ -111,7 +111,7 @@
       </div>
     </div>
     <div class="currently-reading">
-<div class="container">
+<div class="dash-container">
 
   <fa-icon [icon]="progress"></fa-icon>
   <div>
@@ -122,7 +122,7 @@
 </div>
   </div>
   <div class="read-pages">
-    <div class="container">
+    <div class="dash-container">
 
       <fa-icon [icon]="page"></fa-icon>
       <div>
@@ -139,6 +139,17 @@
 </div>
 
 <div class="persistant-content">
- <app-communicate></app-communicate>
+
+
+  <div class="container">
+    <div class="row">
+
+    <div class="col-sm persistent-header">Notification</div>
+    <div class="col-sm persistent-header">Profile</div>
+
+  <div class="communicate">
+    <app-communicate></app-communicate>
+  </div>
+
 </div>
 </div>
