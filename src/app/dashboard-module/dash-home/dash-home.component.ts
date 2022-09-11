@@ -2,6 +2,7 @@ import { UserService } from './../../Services/user-service.service';
 import { Component, OnInit } from '@angular/core';
 import { faBookOpen, faExplosion, faSearch, faArrowRight, faBookReader, faBookOpenReader, faAward, faPager, faBarsProgress } from '@fortawesome/free-solid-svg-icons';
 import { IAuthor } from 'src/app/shared/author';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-dash-home',
@@ -21,15 +22,17 @@ export class DashHomeComponent implements OnInit {
   page = faPager;
   progress = faBarsProgress;
   date = new Date();
-  constructor(private userService:UserService) { }
+  constructor(private route:ActivatedRoute) { }
    authors!:IAuthor[];
   ngOnInit(): void {
     this.getPopularAuthor();
   }
  getPopularAuthor(){
-   this.userService.GetAuthors().subscribe(data=>{
-    this.authors = data as [];
+
+    this.route.data.subscribe((d):any=>{
+      this.authors = d['resolve'];
+    })
     console.log(this.authors);
-   })
+
  }
 }

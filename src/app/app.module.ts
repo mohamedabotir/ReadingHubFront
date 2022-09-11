@@ -17,12 +17,14 @@ import { AngMusicPlayerModule } from  'ang-music-player';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthorizeInterceptor } from './Services/authorize.interceptor';
+import { LoginComponent } from './login/login.component';
 
  @NgModule({
   declarations: [
     AppComponent,
 
     LandingComponent,
+     LoginComponent,
 
   ],
   imports: [

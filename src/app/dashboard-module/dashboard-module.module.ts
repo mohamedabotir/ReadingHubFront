@@ -18,6 +18,7 @@ import { AngMusicPlayerModule } from 'ang-music-player';
 import { AuthorizeInterceptor } from '../Services/authorize.interceptor';
 import { DashBoardComponent } from './dash-board/dash-board.component';
 import { CommunicateComponent } from './communicate/communicate.component';
+import { AuthorResolverResolver } from './resolver/author-resolver.resolver';
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import { CommunicateComponent } from './communicate/communicate.component';
     NgbModule,
     HttpClientModule
   ],
-  providers: [
+  providers: [AuthorResolverResolver,
     UserService,
     {
       provide:HTTP_INTERCEPTORS,
