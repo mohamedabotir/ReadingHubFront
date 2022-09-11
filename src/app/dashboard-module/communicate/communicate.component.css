@@ -16,3 +16,9 @@ audio{
   overflow: scroll;
   scroll-behavior: smooth;
 }
+.playlists div div:not(:last-child){
+  border-bottom: 1px solid black;
+}
+.playlists div div{
+  background-color: #b994ff;
+}

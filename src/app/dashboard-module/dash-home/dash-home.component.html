@@ -1,33 +1,4 @@
-<div class="dash-container">
-<div class="bar">
-  <div class="brand">
-    <fa-icon [icon]="book"></fa-icon>
-    ReadingHub
-  </div>
-  <div class="content">
-    <a routerLinkActive='active-link'>
-
-      <div >
-        <fa-icon [icon]="feed"></fa-icon> Feed
-      </div>
-    </a>
-    <div >
-      <fa-icon [icon]="favorite"></fa-icon>MyFavorite
-    </div>
-    <div>
-      <fa-icon [icon]="bookIcon"></fa-icon> MyBooks
-    </div>
-    <div >
-      <fa-icon [icon]="explore"></fa-icon>Explore
-    </div>
-  </div>
-
-  <div class="logout">
-   <fa-icon [icon]="lock"></fa-icon>Logout
-  </div>
-</div>
-<div class="source-content">
-  <div class="header">
+   <div class="header">
     <div class="search">
      <fa-icon [icon]="search"></fa-icon>
      <input type="text" placeholder="Search ...">
@@ -57,23 +28,26 @@
       <h3>Popular Author</h3>
 
 
-      <div class="author">
-        <div>
-          <img src="../../assets/imgs/placeholder.png" alt="">
-        </div>
-        <div class="author-name">
-          AutherName
-        </div>
-        <div class="icon">
-        <fa-icon [icon]="reader"></fa-icon>
-        </div>
+      <div class="author" *ngFor="let author of authors">
+
+
+          <div>
+            <img src="{{author.photoUrl==null?'../../assets/imgs/placeholder.png':author.photoUrl}} " alt="">
+          </div>
+          <div class="author-name">
+            {{author.userName}}
+          </div>
+          <div class="icon">
+            <fa-icon [icon]="reader"></fa-icon>
+          </div>
+
       </div>
       <div class="more">More</div>
     </div>
     <div class="reading">
        <h3>Keep Reading</h3>
 
-       <div class="progress">
+       <div class="books-progress">
         <div class="dash-container">
           <img src="../../assets/imgs/placeholder.png" alt="">
         </div>
@@ -136,20 +110,3 @@
  </div>
 
 
-</div>
-
-<div class="persistant-content">
-
-
-  <div class="container">
-    <div class="row">
-
-    <div class="col-sm persistent-header">Notification</div>
-    <div class="col-sm persistent-header">Profile</div>
-
-  <div class="communicate">
-    <app-communicate></app-communicate>
-  </div>
-
-</div>
-</div>

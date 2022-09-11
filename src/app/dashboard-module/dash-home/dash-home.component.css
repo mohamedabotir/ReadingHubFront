@@ -1,71 +1,4 @@
-*{
-  font-family: 'Noto Sans', sans-serif;
 
-}
-h3{
-  font-size: larger;
-
-}
-.bar
-,.content
-,.persistent-content{
-  padding-top: 5px;
-  height: calc(100vh - 5px);
-}
-.dash-container {
-   display: flex;
-   grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
-  justify-self: left;
-
-}
-
-.bar {
-  font-size:medium;
-    display: flex;
-    flex-direction: column;
-    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
-    gap: 110px;
-    background: hsl(261deg 100% 79%);
-    position: relative;
-    left: 0;
-    padding-left: 20px;
-    width: 120px;
-    border-bottom-right-radius: 5px solid;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-}
-.bar .brand{
-  font-size: large;
-  color: #5a34a3;
-  left: 0;
-}
-.bar .content{
-  color: aliceblue;
-
-}
-.bar .content div{
-  padding-top: 50px;
-}
-
-.logout {
-  position: absolute;
-  bottom: 0;
-  right: 30%;
-  color: rgba(255, 255, 255, 0.699);
-}
-
-.active-link{
-  background-color: aliceblue;
-  color: #5a34a3;
-}
-
-
-.source-content {
-  width: calc(100vw - 120px - 25vw);
-  padding-left: 8vw;
-    padding-right: 8vw;
-    background-color: #dddddd;
-}
 
 
 .persistant-content{
@@ -157,27 +90,27 @@ color: hsl(261deg 100% 79%);
   padding-top: 10%;
 }
 
-.reading .progress img{
+.reading .books-progress img{
   width: 50px;
   height: 70px;
   border-radius: 5%;
   vertical-align:middle;
 }
-.progress .dash-container{
+.books-progress .dash-container{
  width: 50px;
 }
-.progress{
+.books-progress{
   position: relative;
   display: flex;
   justify-items: end;
 
   max-width: 350px;
 }
-.progress .book-info{
+.books-progress .book-info{
  justify-self: left;
 
 }
-.mat-progress-bar {
+.mat-books-progress-bar {
   display: block;
   height: 4px;
   overflow: hidden;
@@ -236,33 +169,4 @@ color: hsl(261deg 100% 79%);
     margin-bottom: 20px;
     padding-bottom: 20px;
     }
-}
-
-.persistant-content .wrapper {
-  align-items: center;
-  background: #000;
-  border-radius: 15px;
-  display: flex;
-  font-family: Raleway,sans-serif;
-  height: 130px;
-  width: 250px;
-  padding-bottom: 10px;
-}
-
-.persistant-content{
-  display: flex;
-  flex-direction: column;
-
-  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
-  gap: 110px;
-}
-
-.persistent-header{
-  padding-bottom: 10px;
-  justify-self: center;
-}
-.communicate{
-  height: 500px;
-  align-items:flex-end;
-  display: flex;
 }

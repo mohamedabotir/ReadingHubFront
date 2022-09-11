@@ -1,10 +1,9 @@
 import { LandingComponent } from './landing/landing.component';
-import { DashBoardComponent } from './dash-board/dash-board.component';
-import { NgModule } from '@angular/core';
+ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-{path:'Dashboard',component:DashBoardComponent},
+{path:'Dashboard',loadChildren:()=>import('./dashboard-module/dashboard-module.module').then(e=>e.DashboardModuleModule)},
 {path:'',component:LandingComponent}
 ];
 

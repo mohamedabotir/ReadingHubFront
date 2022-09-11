@@ -1,8 +1,8 @@
-import {  DataConnection, PeerJSOption } from './../../../node_modules/peerjs/dist/types.d';
+import {  DataConnection, PeerJSOption } from './../../../../node_modules/peerjs/dist/types.d';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
    import Peer from 'peerjs';
  import { v4 as uuidv4 } from 'uuid';
-import { StreamService } from '../Services/stream.service';
+import { StreamService } from '../../Services/stream.service';
 
 @Component({
   selector: 'app-communicate',
@@ -19,7 +19,7 @@ export class CommunicateComponent implements OnInit {
 constructor(public streams:StreamService){
   this.id = this.initPeer();
 }
-
+public selectedcast = -1;
 connectionCode=""
 public connections!:[];
 currentConncetion!:DataConnection;
@@ -40,8 +40,7 @@ join(): void{
   }
 }
 isClosed = false;
-  //peer = new Peer();
-peer!:Peer;
+ peer!:Peer;
   public initPeer(): string {
     if (!this.peer || this.peer.disconnected) {
         const peerJsOptions: PeerJSOption = {
@@ -135,7 +134,8 @@ getConnections(){
 getAll(){
   console.log(this.connections);
 }
-listen(connection:any){
+listen(connection:any,index:any){
+  this.selectedcast = index;
 this.call(connection);
 }
 cancel(){

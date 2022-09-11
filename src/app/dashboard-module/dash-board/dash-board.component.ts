@@ -12,7 +12,7 @@ import { faBookOpenReader } from '@fortawesome/free-solid-svg-icons';
 import { faAward } from '@fortawesome/free-solid-svg-icons';
 import { faPager } from '@fortawesome/free-solid-svg-icons';
 import { faBarsProgress } from '@fortawesome/free-solid-svg-icons';
-
+import { faMoneyBill } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -21,7 +21,11 @@ import { faBarsProgress } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./dash-board.component.css']
 })
 export class DashBoardComponent implements OnInit {
-
+  Notifications=[
+    {message:"cool",userId:''},
+    {message:"Good",userId:''},
+    {message:"Ready",userId:''},
+  ];
   constructor() { }
   bookIcon = faBook;
   lock = faUnlock;
@@ -36,12 +40,10 @@ export class DashBoardComponent implements OnInit {
   author = faAward;
   page = faPager;
   progress = faBarsProgress;
-  msbapTitle = 'Audio Title';
-  msbapAudioUrl = 'Link to audio URL';
 
-  msbapDisplayTitle = false;
-  msbapDisplayVolumeControls = true;
-  date = new Date();
+
+  notification = faMoneyBill;
+
   ngOnInit(): void {
   }
 
