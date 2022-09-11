@@ -1,8 +1,8 @@
 <!--Nav-->
 <div class="langing-container">
-  <div class="nav">
+  <div class="nav-bar">
     <div class="links">
-      <div class="brand">ReadingHub</div>
+      <div class="web-brand">ReadingHub</div>
      <ul>
       <li><a  [routerLink]="'Dashboard'">Explore</a></li>
       <li><a href="#">Blog</a></li>
@@ -17,7 +17,7 @@
      </div>
      <div class="user-ops">
       <ul>
-        <li data-bs-toggle="modal" data-bs-target="#exampleModal" ><a href="#">Login</a></li>
+        <li data-bs-toggle="modal" data-bs-target="#exampleModal" ><a routerLink="login">Login</a></li>
         <li><a href="#">Create</a></li>
       </ul>
      </div>
@@ -27,164 +27,15 @@
 </div>
 <!--End Nav Section-->
 <!--cover-->
-<div class="cover">
-  <div class="cover-head">
-    Welcome Readers
-
-    <p>The Best Hub For Reading</p>
-  </div>
- </div>
- <!--End Cover-->
- <!--Features Section-->
-<div class="features">
-  <div class="section-header">what We Provide</div>
-  <div class="splitter"></div>
-  <div class="langing-container">
-    <div class="feature">
-      <fa-icon [icon]="doller"></fa-icon>
-    <h3>Free To Use</h3>
-    <p>It is always Free To Use</p>
-  </div>
-  <div class="feature">
-    <fa-icon [icon]="share"></fa-icon>
-    <h3>Sherable Content</h3>
-    <p>Can Share Posts and openion</p>
-  </div>
-  <div class="feature">
-    <fa-icon [icon]="home"></fa-icon>
-    <h3>Reading Progress </h3>
-    <p>Track Your Reading Progress</p>
-  </div>
-  <div class="feature">
-    <fa-icon [icon]="podcast"></fa-icon>
-    <h3>Publisher Podcast</h3>
-    <p>Listen to Publishers Podcats</p>
-  </div>
-  <div class="feature">
-    <fa-icon [icon]="bookMark"></fa-icon>
-    <h3>Save Important Items</h3>
-    <p>You can Save Notes about books</p>
-  </div>
-  <div class="feature">
-    <fa-icon [icon]="book"></fa-icon>
-    <h3>Pay per use</h3>
-    <p>Pay only what you read</p>
-  </div>
-</div>
+<div class="holder">
+<router-outlet></router-outlet>
 
 </div>
-<!--End Section Section-->
-<!--Book Section-->
-<div class="books">
-  <div class="section-header">Our Special Books</div>
-  <div class="splitter"></div>
-  <div class="langing-container">
-    <div class="book">
-      <img src="../../assets/imgs/placeholder.png" alt="">
-      <h3>BookName</h3>
-    </div>
-    <div class="book">
-      <img src="../../assets/imgs/placeholder.png" alt="">
-      <h3>BookName</h3>
-    </div>
-    <div class="book">
-      <img src="../../assets/imgs/placeholder.png" alt="">
-      <h3>BookName</h3>
-    </div>
-
-  </div>
-</div>
-<!--End Book Section-->
-
-<!--Start About Section-->
-
-<div class="about">
-  <div class="section-header">About</div>
-<div class="splitter"></div>
-<div class="about-paragraph">
-  <p>Our target is encourage people in reading Books </p>
-</div>
-<div class="contact">
-  <fa-icon [icon]="contact"></fa-icon>
-<p>ReadingHub@Email.hub</p>
-</div>
-</div>
-<!--End About Section-->
 
 
-<!--Start Contact Section-->
-<div class="complaint">
-<h3>Complaint</h3>
-<div class="contact-form">
-<form action="">
-  <div class="row">
 
-    <mat-form-field appearance="fill">
-      <mat-label>FirstName</mat-label>
-      <input matInput  placeholder="Enter FirstName">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Last Name</mat-label>
-      <input matInput  placeholder="Enter LastName">
-    </mat-form-field>
-  </div>
-  <div class="row" >
-    <mat-form-field appearance="fill">
-      <mat-label>Email</mat-label>
-      <input matInput  placeholder="Enter Email">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Phone</mat-label>
-      <input matInput  placeholder="Enter Phone">
-    </mat-form-field>
-  </div>
-  <div class="row">
-    <mat-form-field appearance="fill">
-      <mat-label>Address</mat-label>
-      <input matInput  placeholder="Enter Address">
-    </mat-form-field>
-  </div>
-  <div class="row">
-    <mat-form-field appearance="fill">
-      <mat-label>Complaint</mat-label>
-      <textarea matInput></textarea>
-    </mat-form-field>
-  </div>
-  <div class="row">
-    <button mat-button>Submit</button>
-  </div>
-</form>
-</div>
-</div>
-<!--End Contact Section-->
-
-<div class="copyright">
-  <h4>All Copy Right &copy; Mohamed Abdalsalam</h4>
-</div>
 
 
 
 <!-- Button trigger modal -->
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" >
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>

@@ -18,6 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthorizeInterceptor } from './Services/authorize.interceptor';
 import { LoginComponent } from './login/login.component';
+import { MainComponent } from './main/main.component';
 
  @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { LoginComponent } from './login/login.component';
 
     LandingComponent,
      LoginComponent,
+     MainComponent,
 
   ],
   imports: [

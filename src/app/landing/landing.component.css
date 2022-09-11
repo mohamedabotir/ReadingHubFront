@@ -15,9 +15,10 @@
   position: sticky;
   top: 0px;
   z-index: 1;
+  padding: 10px;
 
 }
-.nav{
+.nav-bar{
 padding-left: 15px;
 padding-right: 15px;
 margin-left: auto;
@@ -26,7 +27,7 @@ margin-right: auto;
 }
 /*Small*/
 @media (min-width:768 ) {
-  .nav{
+  .nav-bar{
     width: 750px;
   }
   .features .langing-container{
@@ -36,33 +37,33 @@ margin-right: auto;
 
 /*Medium*/
 @media (min-width:992 ) {
-  .nav{
+  .nav-bar{
     width: 970px;
   }
 }
 /*Large*/
 @media (min-width:1200 ) {
-  .nav{
+  .nav-bar{
     width: 1170;
   }
 }
 
-.langing-container .nav .links{
+.langing-container .nav-bar .links{
+  display: flex;
+  justify-content: space-around;
+
+
+}
+.langing-container .nav-bar{
   display: flex;
   justify-content: space-around;
   align-items:center;
-
-}
-.langing-container .nav{
-  display: flex;
-  justify-content: space-around;
-  align-items:center;
 }
 
-.nav .links{
+.nav-bar .links{
   position: relative;
 }
-.nav .links li{
+.nav-bar .links li{
   margin-left: 5px;
 }
 .action .expander{
@@ -280,7 +281,3 @@ button.mat-focus-indicator.mat-button.mat-button-base {
   width: 150px;
 }
 
-.copyright{
-  background-color: #4e4949cf;
-  text-align: center;
-}
