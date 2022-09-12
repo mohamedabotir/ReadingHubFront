@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment';
 import { UserService } from './../../Services/user-service.service';
 import { Component, OnInit } from '@angular/core';
 import { faBookOpen, faExplosion, faSearch, faArrowRight, faBookReader, faBookOpenReader, faAward, faPager, faBarsProgress } from '@fortawesome/free-solid-svg-icons';
@@ -24,6 +25,7 @@ export class DashHomeComponent implements OnInit {
   date = new Date();
   constructor(private route:ActivatedRoute) { }
    authors!:IAuthor[];
+   url = environment.baseUrl
   ngOnInit(): void {
     this.getPopularAuthor();
   }
@@ -31,8 +33,9 @@ export class DashHomeComponent implements OnInit {
 
     this.route.data.subscribe((d):any=>{
       this.authors = d['resolve'];
+
+      console.log(this.authors);
     })
-    console.log(this.authors);
 
  }
 }

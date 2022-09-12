@@ -1,5 +1,5 @@
 export interface IAuthor{
    id:String ;
-   photoUrl:String ;
+   pictureUrl:String ;
    userName:String ;
 }
