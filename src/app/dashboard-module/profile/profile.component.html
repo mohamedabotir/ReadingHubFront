@@ -1,0 +1,24 @@
+<h2>Profile</h2>
+<img src="{{url+profileInfo.pictureUrl==null?'../../assets/imgs/placeholder.png':url+profileInfo.pictureUrl}}" alt="">
+{{profileInfo.userName}}
+<div class="splitter"></div>
+<div class="posts" >
+  <h3>My Posts</h3>
+  <textarea  #focus  class="post-publish" (click)="poptrue()" placeholder="What is in Mind" minlength="1" maxlength="250">
+  </textarea>
+  <div >
+    <div class="content" class="pop-post" class="popup"  *ngIf="pop" @popupParent>
+    <div class="conten-container"  @popupChild >
+<fa-icon  [icon]="exit" (click)="pop = false" class="exit"></fa-icon>
+      <textarea [(ngModel)]="remaningChar" placeholder="What is in Mind" #focus  maxlength="250">
+
+      </textarea>
+      <span class="count">
+        {{calculateRemaning()}}
+      </span>
+      <button mat-raised-button>Send</button>
+    </div>
+    </div>
+</div>
+
+</div>

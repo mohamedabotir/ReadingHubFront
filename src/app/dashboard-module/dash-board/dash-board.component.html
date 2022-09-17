@@ -5,21 +5,36 @@
     ReadingHub
   </div>
   <div class="content">
-    <a routerLinkActive='active-link'>
-
+    <a [routerLink]="['/Dashboard']" routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{exact:true}">
+         <div>
+           <fa-icon [icon]="home"></fa-icon>Home
+          </div>
+        </a>
+        <a [routerLink]="['Feed']" routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{exact:true}">
       <div >
         <fa-icon [icon]="feed"></fa-icon> Feed
       </div>
-    </a>
+        </a>
+        <a [routerLink]="['MyFavorite']" routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{exact:true}">
     <div >
       <fa-icon [icon]="favorite"></fa-icon>MyFavorite
     </div>
+        </a>
+        <a [routerLink]="['MyBooks']" routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{exact:true}">
     <div>
       <fa-icon [icon]="bookIcon"></fa-icon> MyBooks
     </div>
+        </a>
+        <a [routerLink]="['Explore']" routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{exact:true}">
     <div >
       <fa-icon [icon]="explore"></fa-icon>Explore
     </div>
+        </a>
   </div>
 
   <div class="logout">
@@ -47,8 +62,13 @@
 
      </div>
     <div class="col-sm persistent-header">
-      Mohamed
-      <img src="../../assets/imgs/placeholder.png" alt="">
+      <a [routerLink]="['profile']">
+        <span>
+          {{userProfile.userName}}
+        </span>
+        <img src="{{url+userProfile.pictureUrl==null?'../../assets/imgs/placeholder.png':url+userProfile.pictureUrl}}" alt="">
+      </a>
+
     </div>
 
   <div class="communicate">

@@ -336,3 +336,20 @@ navbar
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
 }
+
+.persistent-header span{
+  text-decoration: none;
+}
+
+.active-link{
+  background-color: rgb(59, 51, 39);
+}
+
+.content a{
+
+    color: white;
+    text-decoration: none;
+}
+.content a:hover{
+  color: white;
+}

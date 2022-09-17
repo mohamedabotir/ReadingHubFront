@@ -18,4 +18,8 @@ export class UserService {
    async GetUserId(){
     return  this.http.get(this.url+"GetUserId").toPromise();
    }
+
+   getMyProfile(){
+    return this.http.get(this.url+"GetMyProfile");
+   }
 }

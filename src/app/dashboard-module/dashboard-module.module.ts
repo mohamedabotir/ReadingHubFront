@@ -1,3 +1,5 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProfileResolver } from './resolver/profile.resolver';
 import { UserService } from './../Services/user-service.service';
  import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -19,13 +21,15 @@ import { AuthorizeInterceptor } from '../Services/authorize.interceptor';
 import { DashBoardComponent } from './dash-board/dash-board.component';
 import { CommunicateComponent } from './communicate/communicate.component';
 import { AuthorResolverResolver } from './resolver/author-resolver.resolver';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
   declarations: [
     DashBoardComponent,
     DashHomeComponent,
-    CommunicateComponent
+    CommunicateComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
@@ -39,10 +43,12 @@ import { AuthorResolverResolver } from './resolver/author-resolver.resolver';
     FontAwesomeModule,
     MatProgressBarModule,
     AngMusicPlayerModule,
+    ReactiveFormsModule,
+    FormsModule,
     NgbModule,
     HttpClientModule
   ],
-  providers: [AuthorResolverResolver,
+  providers: [AuthorResolverResolver,ProfileResolver,
     UserService,
     {
       provide:HTTP_INTERCEPTORS,
