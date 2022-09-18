@@ -24,17 +24,7 @@ input{
   border: 1px solid rgb(48, 133, 202);
 }
 
-.popup{
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  background-color: rgb(179 179 179 / 84%);
-  top: 0;
-  left: 0;
-}
+
 fa-icon.ng-fa-icon.exit.ng-tns-c168-0 {
   top: 0px;
   right: 5px;
@@ -55,7 +45,17 @@ height: 20px;
 
 
 
-
+.popup{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(179 179 179 / 84%);
+  top: 0;
+  left: 0;
+}
 
 
 
@@ -397,4 +397,9 @@ fa-icon.ng-fa-icon.ng-tns-c182-0 {
   background-color: rgb(66 58 58 / 84%);
   top: 0;
   left: 0;
+}
+
+mat-card.mat-card.mat-focus-indicator.example-card.ng-tns-c182-0.ng-star-inserted {
+  background-color: whitesmoke;
+  color: black;
 }

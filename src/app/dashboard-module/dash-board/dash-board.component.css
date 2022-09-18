@@ -238,6 +238,9 @@ color: hsl(261deg 100% 79%);
     margin-bottom: 20px;
     padding-bottom: 20px;
     }
+    .bar{
+      position: relative;
+    }
 }
 
 .persistant-content .wrapper {

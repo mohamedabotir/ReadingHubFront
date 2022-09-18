@@ -1,0 +1,51 @@
+<div class="btn btn-success add-book-btn" (click)="pop=true">
+  Add Book <fa-icon [icon]="plus"></fa-icon>
+</div>
+<div class="books-container">
+  <div class="row">
+    <div class="col col-mid col-4">
+  book1
+</div>
+<div class="col col-mid col-4">
+  book2
+</div>
+<div class="col col-mid col-4">
+  book3
+</div>
+</div>
+</div>
+<div class="popup"  *ngIf="pop" @popupParent>
+  <div class="exit-icon">
+    <fa-icon [icon]="exit" (click)="pop=false"></fa-icon>
+  </div>
+
+  <form [formGroup]="publishBookForm"  (ngSubmit)="publish()" @popupChild enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">BookName</label>
+      <input formControlName="BookName" type="text" class="form-control" id="exampleFormControlInput1" placeholder="BookName">
+    </div>
+
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Book Description</label>
+      <textarea formControlName="Description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Page Numbers</label>
+       <input  formControlName="PageNumbers" type="number" class="form-control" id="exampleFormControlFile1" >
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Book File</label>
+       <input #file (change)="uploadFile(file.files)"  type="file" class="form-control-file" id="exampleFormControlFile1" >
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Cover File</label>
+       <input #picture (change)="uploadPicture(picture.files)"   type="file" class="form-control-file" id="exampleFormControlFile1" >
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Publish</button>
+  </form>
+
+  </div>

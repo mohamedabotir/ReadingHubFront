@@ -1,4 +1,4 @@
-import { ProfileResolver } from './resolver/profile.resolver';
+ import { ProfileResolver } from './resolver/profile.resolver';
 import { DashHomeComponent } from './dash-home/dash-home.component';
  import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -7,6 +7,7 @@ import { AuthorResolverResolver } from './resolver/author-resolver.resolver';
 import { AuthorizeToGo } from '../Services/autorizetogo';
 import { ProfileComponent } from './profile/profile.component';
 import { MyPostsResolver } from './resolver/MyPosts.resolver';
+import { MybooksComponent } from './mybooks/mybooks.component';
 
 const routes: Routes = [
   {path:'',canActivate:[AuthorizeToGo],
@@ -22,8 +23,9 @@ const routes: Routes = [
      resolve:{
       resolve:ProfileResolver,
       myposts:MyPostsResolver
-    },
-
+    }
+    },{
+      path:'myBooks',component:MybooksComponent
     }
   ]
 },

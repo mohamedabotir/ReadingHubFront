@@ -1,4 +1,5 @@
-import { PostService } from './../Services/post.service';
+import { BookService } from './../Services/book-service.service';
+ import { PostService } from './../Services/post.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileResolver } from './resolver/profile.resolver';
 import { UserService } from './../Services/user-service.service';
@@ -26,13 +27,15 @@ import { ProfileComponent } from './profile/profile.component';
 import { MatCardModule } from '@angular/material/card';
 import { MyPostsResolver } from './resolver/MyPosts.resolver';
 import {MatIconModule} from '@angular/material/icon';
+import { MybooksComponent } from './mybooks/mybooks.component';
 
 @NgModule({
   declarations: [
     DashBoardComponent,
     DashHomeComponent,
     CommunicateComponent,
-    ProfileComponent
+    ProfileComponent,
+    MybooksComponent
   ],
   imports: [
     CommonModule,
@@ -53,7 +56,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatCardModule,
     MatIconModule
   ],
-  providers: [AuthorResolverResolver,ProfileResolver,MyPostsResolver,PostService,
+  providers: [AuthorResolverResolver,ProfileResolver,MyPostsResolver,PostService,BookService,
     UserService,
     {
       provide:HTTP_INTERCEPTORS,
