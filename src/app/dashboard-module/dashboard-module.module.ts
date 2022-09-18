@@ -1,3 +1,4 @@
+import { PostService } from './../Services/post.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileResolver } from './resolver/profile.resolver';
 import { UserService } from './../Services/user-service.service';
@@ -24,7 +25,7 @@ import { AuthorResolverResolver } from './resolver/author-resolver.resolver';
 import { ProfileComponent } from './profile/profile.component';
 import { MatCardModule } from '@angular/material/card';
 import { MyPostsResolver } from './resolver/MyPosts.resolver';
-
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -49,9 +50,10 @@ import { MyPostsResolver } from './resolver/MyPosts.resolver';
     FormsModule,
     NgbModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule
   ],
-  providers: [AuthorResolverResolver,ProfileResolver,MyPostsResolver,
+  providers: [AuthorResolverResolver,ProfileResolver,MyPostsResolver,PostService,
     UserService,
     {
       provide:HTTP_INTERCEPTORS,

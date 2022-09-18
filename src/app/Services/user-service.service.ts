@@ -31,4 +31,5 @@ export class UserService {
     console.log(post)
     return this.http.post(this.postUrl+"Post?content="+post,null);
    }
-}
+
+  }

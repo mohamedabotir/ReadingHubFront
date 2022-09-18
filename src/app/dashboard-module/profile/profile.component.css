@@ -357,3 +357,44 @@ form textarea:valid ~ button:hover{
   border-radius: 10px;
 }
 
+.content {
+  display: flex;
+}
+ .details :hover{
+  cursor: pointer;
+}
+ .details ul{
+  top: 10px;
+  position: relative;
+  list-style: none;
+}
+
+ .details ul li:hover{
+  background-color: #f1eeeede;
+ border-radius: 5px;
+}
+
+ .details{
+ font-size: small;
+  position: absolute;
+  right: 0;
+   padding-left: 19vw;
+   height: 50px;
+}
+fa-icon.ng-fa-icon.ng-tns-c182-0 {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.popup[_ngcontent-bsg-c182] {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(66 58 58 / 84%);
+  top: 0;
+  left: 0;
+}

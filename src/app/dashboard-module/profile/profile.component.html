@@ -1,3 +1,4 @@
+
 <h2>Profile</h2>
 <img src="{{url+profileInfo.pictureUrl==null?'../../assets/imgs/placeholder.png':url+profileInfo.pictureUrl}}" alt="">
 {{profileInfo.userName}}
@@ -5,38 +6,83 @@
 
 <div class="container">
   <div class="wrapper">
-    <section class="post">
-      <header>Post</header>
-      <form [formGroup]="post" (ngSubmit)="submit()">
-        <div class="content">
-          <img src="{{url+profileInfo.pictureUrl==null?'../../assets/imgs/placeholder.png':url+profileInfo.pictureUrl}}" alt="picture">
-          <div class="details">
-            {{profileInfo.userName}}
 
-          </div>
-        </div>
-        <textarea formControlName="postContent" placeholder="What's on your mind, CodeWithNepal?" spellcheck="false" required maxlength="250"></textarea>
-        <span class="count">
-          {{calculateRemaning()}}
-        </span>
-        <div class="options">
-          <ul class="list" >
-            <li *ngFor="let emoji of emojiList"><span (click)="addEmoji(emoji)">{{emoji}}</span></li>
-          </ul>
-        </div>
-        <button>Post</button>
-      </form>
-    </section>
+ <ng-container *ngTemplateOutlet="postTemplate">
+
+ </ng-container>
 
   </div>
+
 </div>
 
+<ng-template #postTemplate>
+  <section class="post">
+    <header>Post</header>
+
+    <form [formGroup]="post" (ngSubmit)="submit()">
+      <div class="content">
+        <div>
+          <img src="{{url+profileInfo.pictureUrl==null?'../../assets/imgs/placeholder.png':url+profileInfo.pictureUrl}}" alt="picture">
+          {{profileInfo.userName}}
+        </div>
+
+      </div>
+      <textarea formControlName="postContent" placeholder="What's on your mind, CodeWithNepal?" spellcheck="false" required maxlength="250"></textarea>
+      <span class="count">
+        {{calculateRemaning()}}
+      </span>
+      <div class="options">
+        <ul class="list" >
+          <li *ngFor="let emoji of emojiList"><span (click)="addEmoji(emoji)">{{emoji}}</span></li>
+        </ul>
+      </div>
+      <button>Post</button>
+    </form>
+  </section>
+</ng-template>
 
 
-<mat-card class="example-card" *ngFor="let post of posts">
+<ng-template #EditPost>
+  <section class="post">
+    <header>Post</header>
+
+    <form [formGroup]="editPost" (ngSubmit)="onEdit()">
+      <div class="content">
+        <div>
+          <img src="{{url+profileInfo.pictureUrl==null?'../../assets/imgs/placeholder.png':url+profileInfo.pictureUrl}}" alt="picture">
+          {{profileInfo.userName}}
+        </div>
+
+      </div>
+      <textarea formControlName="postContent" placeholder="What's on your mind, CodeWithNepal?" spellcheck="false" required maxlength="250"></textarea>
+      <span class="count">
+        {{calculateRemaningEdit()}}
+      </span>
+      <div class="options">
+        <ul class="list" >
+          <li *ngFor="let emoji of emojiList"><span (click)="addEmojiEdit(emoji)">{{emoji}}</span></li>
+        </ul>
+      </div>
+      <button>Post</button>
+    </form>
+  </section>
+</ng-template>
+
+
+<mat-card class="example-card" *ngFor="let post of posts;let i=index">
+
   <img src="{{url+profileInfo.pictureUrl==null?'../../assets/imgs/placeholder.png':url+profileInfo.pictureUrl}}" alt="">
-  <mat-card-title>{{profileInfo.userName}}</mat-card-title>
-   <mat-card-content>
+  <mat-card-title>
+    {{profileInfo.userName}}
+    <div class="details">
+      <ul>
+       <li (click)="edit(i);pop=true">Edit</li>
+       <li (click)="delete(i)">Delete</li>
+      </ul>
+    </div>
+  </mat-card-title>
+
+  <mat-card-content>
    {{post.postContent}}
   </mat-card-content>
   <mat-card-actions>
@@ -45,7 +91,14 @@
   </mat-card-actions>
 </mat-card>
 
+<div class="popup"  *ngIf="pop" @popupParent>
+  <div class="exit-icon">
+    <fa-icon [icon]="exit" (click)="pop=false"></fa-icon>
+  </div>
+  <ng-container *ngTemplateOutlet="EditPost">
 
+  </ng-container>
+  </div>
 
 <script>
   const container = document.querySelector(".container"),
