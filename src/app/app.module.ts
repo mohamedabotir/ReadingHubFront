@@ -21,7 +21,7 @@ import { AuthorizeInterceptor } from './Services/authorize.interceptor';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { AuthorizeToGo } from './Services/autorizetogo';
-
+import {MatCardModule} from '@angular/material/card';
  @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +47,8 @@ import { AuthorizeToGo } from './Services/autorizetogo';
     MatProgressBarModule,
     AngMusicPlayerModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [
     UserService,

@@ -6,6 +6,7 @@ import { DashBoardComponent } from './dash-board/dash-board.component';
 import { AuthorResolverResolver } from './resolver/author-resolver.resolver';
 import { AuthorizeToGo } from '../Services/autorizetogo';
 import { ProfileComponent } from './profile/profile.component';
+import { MyPostsResolver } from './resolver/MyPosts.resolver';
 
 const routes: Routes = [
   {path:'',canActivate:[AuthorizeToGo],
@@ -18,7 +19,11 @@ const routes: Routes = [
     {
      path:"profile",component:ProfileComponent,
      pathMatch:'full',
-     resolve:{resolve:ProfileResolver}
+     resolve:{
+      resolve:ProfileResolver,
+      myposts:MyPostsResolver
+    },
+
     }
   ]
 },

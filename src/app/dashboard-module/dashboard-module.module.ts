@@ -22,6 +22,8 @@ import { DashBoardComponent } from './dash-board/dash-board.component';
 import { CommunicateComponent } from './communicate/communicate.component';
 import { AuthorResolverResolver } from './resolver/author-resolver.resolver';
 import { ProfileComponent } from './profile/profile.component';
+import { MatCardModule } from '@angular/material/card';
+import { MyPostsResolver } from './resolver/MyPosts.resolver';
 
 
 @NgModule({
@@ -46,9 +48,10 @@ import { ProfileComponent } from './profile/profile.component';
     ReactiveFormsModule,
     FormsModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
-  providers: [AuthorResolverResolver,ProfileResolver,
+  providers: [AuthorResolverResolver,ProfileResolver,MyPostsResolver,
     UserService,
     {
       provide:HTTP_INTERCEPTORS,

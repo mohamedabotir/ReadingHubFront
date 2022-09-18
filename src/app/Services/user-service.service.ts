@@ -7,6 +7,8 @@ import { Credentials } from '../shared/Cradentials';
 export class UserService {
 
   url = environment.baseUrl+"api/"+"User/";
+  postUrl = environment.baseUrl+"api/"+"Post/";
+
   constructor(private http:HttpClient) { }
   GetAuthors(){
     return this.http.get(this.url+"GetUsersProfiles");
@@ -21,5 +23,12 @@ export class UserService {
 
    getMyProfile(){
     return this.http.get(this.url+"GetMyProfile");
+   }
+   getMyPosts(page:any){
+    return this.http.get(this.postUrl+"GetMyPosts?page="+page);
+   }
+   postPost(post:string){
+    console.log(post)
+    return this.http.post(this.postUrl+"Post?content="+post,null);
    }
 }

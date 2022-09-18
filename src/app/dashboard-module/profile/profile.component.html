@@ -2,23 +2,63 @@
 <img src="{{url+profileInfo.pictureUrl==null?'../../assets/imgs/placeholder.png':url+profileInfo.pictureUrl}}" alt="">
 {{profileInfo.userName}}
 <div class="splitter"></div>
-<div class="posts" >
-  <h3>My Posts</h3>
-  <textarea  #focus  class="post-publish" (click)="poptrue()" placeholder="What is in Mind" minlength="1" maxlength="250">
-  </textarea>
-  <div >
-    <div class="content" class="pop-post" class="popup"  *ngIf="pop" @popupParent>
-    <div class="conten-container"  @popupChild >
-<fa-icon  [icon]="exit" (click)="pop = false" class="exit"></fa-icon>
-      <textarea [(ngModel)]="remaningChar" placeholder="What is in Mind" #focus  maxlength="250">
 
-      </textarea>
-      <span class="count">
-        {{calculateRemaning()}}
-      </span>
-      <button mat-raised-button>Send</button>
-    </div>
-    </div>
+<div class="container">
+  <div class="wrapper">
+    <section class="post">
+      <header>Post</header>
+      <form [formGroup]="post" (ngSubmit)="submit()">
+        <div class="content">
+          <img src="{{url+profileInfo.pictureUrl==null?'../../assets/imgs/placeholder.png':url+profileInfo.pictureUrl}}" alt="picture">
+          <div class="details">
+            {{profileInfo.userName}}
+
+          </div>
+        </div>
+        <textarea formControlName="postContent" placeholder="What's on your mind, CodeWithNepal?" spellcheck="false" required maxlength="250"></textarea>
+        <span class="count">
+          {{calculateRemaning()}}
+        </span>
+        <div class="options">
+          <ul class="list" >
+            <li *ngFor="let emoji of emojiList"><span (click)="addEmoji(emoji)">{{emoji}}</span></li>
+          </ul>
+        </div>
+        <button>Post</button>
+      </form>
+    </section>
+
+  </div>
 </div>
 
-</div>
+
+
+<mat-card class="example-card" *ngFor="let post of posts">
+  <img src="{{url+profileInfo.pictureUrl==null?'../../assets/imgs/placeholder.png':url+profileInfo.pictureUrl}}" alt="">
+  <mat-card-title>{{profileInfo.userName}}</mat-card-title>
+   <mat-card-content>
+   {{post.postContent}}
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+
+
+
+<script>
+  const container = document.querySelector(".container"),
+  privacy = container.querySelector(".post .privacy"),
+  arrowBack = container.querySelector(".audience .arrow-back");
+
+
+  privacy.addEventListener("click", () => {
+    container.classList.add("active");
+  });
+
+
+  arrowBack.addEventListener("click", () => {
+    container.classList.remove("active");
+  });
+</script>
