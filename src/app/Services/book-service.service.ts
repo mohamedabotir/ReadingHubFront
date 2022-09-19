@@ -13,4 +13,7 @@ url = environment.baseUrl+"api/Book/";
 publishBook(book:any){
   return this.http.post(this.url+"PublishBook",book)
 }
+getMyBooks(){
+return this.http.get(this.url+"GetMyBooks");
+}
 }

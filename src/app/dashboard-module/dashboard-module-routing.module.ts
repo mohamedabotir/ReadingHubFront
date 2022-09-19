@@ -1,3 +1,4 @@
+import { myBooksResolver } from './resolver/myBooks.resolver';
  import { ProfileResolver } from './resolver/profile.resolver';
 import { DashHomeComponent } from './dash-home/dash-home.component';
  import { NgModule } from '@angular/core';
@@ -25,7 +26,9 @@ const routes: Routes = [
       myposts:MyPostsResolver
     }
     },{
-      path:'myBooks',component:MybooksComponent
+      path:'myBooks',component:MybooksComponent,resolve:{
+        resolve:myBooksResolver
+      }
     }
   ]
 },

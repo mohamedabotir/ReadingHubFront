@@ -3,14 +3,16 @@
 </div>
 <div class="books-container">
   <div class="row">
-    <div class="col col-mid col-4">
-  book1
-</div>
-<div class="col col-mid col-4">
-  book2
-</div>
-<div class="col col-mid col-4">
-  book3
+    <div class="col col-mid col-4" *ngFor="let item of myBooks">
+      <div class="book read">
+        <div class="cover">
+          <img src="{{url+item.photoUrl}}">
+        </div>
+        <div class="description">
+          <p class="title">{{item.bookName}}<br>
+            <span class="book-description">{{item.description.substring(0,24)}}</span></p>
+        </div>
+      </div>
 </div>
 </div>
 </div>

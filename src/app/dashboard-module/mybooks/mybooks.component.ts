@@ -1,3 +1,5 @@
+import { environment } from 'src/environments/environment';
+import { ActivatedRoute } from '@angular/router';
 import { BookService } from './../../Services/book-service.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +14,7 @@ import { pop } from '../profile/publish-post.animation';
 })
 export class MybooksComponent implements OnInit {
    formData = new FormData();
-  constructor(private fb:FormBuilder,private bookService:BookService) { }
+  constructor(private fb:FormBuilder,private bookService:BookService,private route:ActivatedRoute) { }
   publishBookForm = this.fb.group({
     BookName:['',[Validators.required]],
     Description:['',[Validators.required]],
@@ -21,8 +23,14 @@ export class MybooksComponent implements OnInit {
  plus =  faPlus;
  exit = faX;
  pop = false;
+ url = environment.baseUrl;
   ngOnInit(): void {
+   this.route.data.subscribe(data=>{
+    this.myBooks  = data['resolve'] as [];
+    console.log(this.myBooks);
+   })
   }
+  myBooks:any[]=[]
   publish(){
     if(this.publishBookForm.valid){
       this.formData.append('bookName',this.publishBookForm.value.BookName);
