@@ -71,7 +71,7 @@ h3{
 
 
 .persistant-content{
-  width: 25vw
+  width: 30vw
 }
 .search {
   width: 70%;
@@ -231,7 +231,7 @@ color: hsl(261deg 100% 79%);
  display: flex;
 
 }
-@media (min-width : 480px) {
+@media (max-width : 480px) {
 
 
     .reading-info .dash-container div{

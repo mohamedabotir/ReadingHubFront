@@ -3,51 +3,61 @@
 </div>
 <div class="books-container">
   <div class="row">
-    <div class="col col-mid col-4" *ngFor="let item of myBooks">
+    <div class="col col-lg-4" *ngFor="let item of myBooks;let i=index">
+      <fa-icon [icon]="edit" (click)="pop=true;FillFormForEdit(i)"></fa-icon>
+      <ng-container [ngTemplateOutlet]="bookForm">
+
+      </ng-container>
       <div class="book read">
         <div class="cover">
           <img src="{{url+item.photoUrl}}">
         </div>
         <div class="description">
           <p class="title">{{item.bookName}}<br>
-            <span class="book-description">{{item.description.substring(0,24)}}</span></p>
+            <span class="book-description">{{item.description}}</span></p>
         </div>
       </div>
 </div>
 </div>
 </div>
-<div class="popup"  *ngIf="pop" @popupParent>
-  <div class="exit-icon">
-    <fa-icon [icon]="exit" (click)="pop=false"></fa-icon>
-  </div>
 
-  <form [formGroup]="publishBookForm"  (ngSubmit)="publish()" @popupChild enctype="multipart/form-data">
-    <div class="form-group">
-      <label for="exampleFormControlInput1">BookName</label>
-      <input formControlName="BookName" type="text" class="form-control" id="exampleFormControlInput1" placeholder="BookName">
+<ng-container [ngTemplateOutlet]="bookForm">
+
+</ng-container>
+
+  <ng-template #bookForm>
+    <div class="popup"  *ngIf="pop" @popupParent>
+      <div class="exit-icon">
+        <fa-icon [icon]="exit" (click)="pop=false"></fa-icon>
+      </div>
+      <form [formGroup]="publishBookForm"  (ngSubmit)="publish()" @popupChild enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="exampleFormControlInput1">BookName</label>
+          <input formControlName="BookName" type="text" class="form-control" id="exampleFormControlInput1" placeholder="BookName">
+        </div>
+
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Book Description</label>
+          <textarea formControlName="Description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Page Numbers</label>
+          <input  formControlName="PageNumbers" type="number" class="form-control" id="exampleFormControlFile1" >
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Book File</label>
+          <input #file (change)="uploadFile(file.files)"  type="file" class="form-control-file" id="exampleFormControlFile1" >
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Cover File</label>
+          <input #picture (change)="uploadPicture(picture.files)"   type="file" class="form-control-file" id="exampleFormControlFile1" >
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
+    </ng-template>
 
-
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Book Description</label>
-      <textarea formControlName="Description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Page Numbers</label>
-       <input  formControlName="PageNumbers" type="number" class="form-control" id="exampleFormControlFile1" >
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Book File</label>
-       <input #file (change)="uploadFile(file.files)"  type="file" class="form-control-file" id="exampleFormControlFile1" >
-    </div>
-
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Cover File</label>
-       <input #picture (change)="uploadPicture(picture.files)"   type="file" class="form-control-file" id="exampleFormControlFile1" >
-    </div>
-
-
-    <button type="submit" class="btn btn-primary">Publish</button>
-  </form>
-
-  </div>

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faX } from '@fortawesome/free-solid-svg-icons';
 import { pop } from '../profile/publish-post.animation';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-mybooks',
   templateUrl: './mybooks.component.html',
@@ -23,6 +24,7 @@ export class MybooksComponent implements OnInit {
  plus =  faPlus;
  exit = faX;
  pop = false;
+ edit = faEdit;
  url = environment.baseUrl;
   ngOnInit(): void {
    this.route.data.subscribe(data=>{
@@ -38,6 +40,7 @@ export class MybooksComponent implements OnInit {
       this.formData.append('pageNumbers',this.publishBookForm.value.PageNumbers);
       this.bookService.publishBook(this.formData).subscribe(data=>{
         console.log(data);
+        this.publishBookForm.reset();
       })
     }
    }
@@ -47,5 +50,14 @@ export class MybooksComponent implements OnInit {
 
   uploadPicture(file:any){
     this.formData.append('photo',<File>file[0]);
+   }
+   FillFormForEdit(index:number){
+     var book = this.myBooks[index];
+     this.publishBookForm.patchValue({
+      BookName:book.bookName,
+      Description:book.description,
+      PageNumbers:book.pageNumbers
+     });
+     console.log(book)
    }
 }

@@ -11,7 +11,10 @@ url = environment.baseUrl+"api/Book/";
   constructor(private http:HttpClient) { }
 
 publishBook(book:any){
-  return this.http.post(this.url+"PublishBook",book)
+  return this.http.post(this.url+"PublishBook",book);
+}
+editBook(book:any){
+  return this.http.put(this.url+"UpdateBook",book);
 }
 getMyBooks(){
 return this.http.get(this.url+"GetMyBooks");
