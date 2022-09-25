@@ -19,7 +19,8 @@ export class MybooksComponent implements OnInit {
   publishBookForm = this.fb.group({
     BookName:['',[Validators.required]],
     Description:['',[Validators.required]],
-    PageNumbers:[,Validators.required]
+    PageNumbers:[,Validators.required],
+    Id:[]
   });
  plus =  faPlus;
  exit = faX;
@@ -33,16 +34,30 @@ export class MybooksComponent implements OnInit {
    })
   }
   myBooks:any[]=[]
+  isEdit = false;
   publish(){
     if(this.publishBookForm.valid){
       this.formData.append('bookName',this.publishBookForm.value.BookName);
       this.formData.append('description',this.publishBookForm.value.Description);
       this.formData.append('pageNumbers',this.publishBookForm.value.PageNumbers);
-      this.bookService.publishBook(this.formData).subscribe(data=>{
-        console.log(data);
-        this.publishBookForm.reset();
-      })
+      if(!this.isEdit){
+        this.bookService.publishBook(this.formData).subscribe(data=>{
+
+        })
+      }else{
+        this.formData.append('id',this.publishBookForm.value.Id);
+
+         this.bookService.editBook(this.formData)
+         .subscribe(()=>{
+
+         });
+      }
+      this.resetForm();
     }
+   }
+   resetForm(){
+    this.formData = new FormData();
+    this.publishBookForm.reset();
    }
   uploadFile(file:any){
    this.formData.append('bookFile',<File>file[0]);
@@ -56,8 +71,9 @@ export class MybooksComponent implements OnInit {
      this.publishBookForm.patchValue({
       BookName:book.bookName,
       Description:book.description,
-      PageNumbers:book.pageNumbers
+      PageNumbers:book.pageNumbers,
+      Id:book.id
      });
-     console.log(book)
+     console.log(this.publishBookForm.value)
    }
 }

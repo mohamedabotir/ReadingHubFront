@@ -1,10 +1,10 @@
-<div class="btn btn-success add-book-btn" (click)="pop=true">
+<div class="btn btn-success add-book-btn" (click)="pop=true;isEdit=false">
   Add Book <fa-icon [icon]="plus"></fa-icon>
 </div>
 <div class="books-container">
   <div class="row">
     <div class="col col-lg-4" *ngFor="let item of myBooks;let i=index">
-      <fa-icon [icon]="edit" (click)="pop=true;FillFormForEdit(i)"></fa-icon>
+      <fa-icon [icon]="edit" (click)="pop=true;FillFormForEdit(i);isEdit=true"></fa-icon>
       <ng-container [ngTemplateOutlet]="bookForm">
 
       </ng-container>
@@ -28,9 +28,12 @@
   <ng-template #bookForm>
     <div class="popup"  *ngIf="pop" @popupParent>
       <div class="exit-icon">
-        <fa-icon [icon]="exit" (click)="pop=false"></fa-icon>
+        <fa-icon [icon]="exit" (click)="pop=false;resetForm()"></fa-icon>
       </div>
       <form [formGroup]="publishBookForm"  (ngSubmit)="publish()" @popupChild enctype="multipart/form-data">
+
+        <input hidden formControlName="Id" type="text" class="form-control" id="exampleFormControlInput1" placeholder="BookName">
+
         <div class="form-group">
           <label for="exampleFormControlInput1">BookName</label>
           <input formControlName="BookName" type="text" class="form-control" id="exampleFormControlInput1" placeholder="BookName">
