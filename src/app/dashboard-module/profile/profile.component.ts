@@ -1,7 +1,7 @@
 import { PostService } from './../../Services/post.service';
 import { UserService } from 'src/app/Services/user-service.service';
 import { Post } from './../../shared/Post';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, ViewChild } from '@angular/core';
@@ -31,7 +31,7 @@ export class ProfileComponent implements OnInit {
   settingDisplay = false;
   editIndex = -1;
 @ViewChild('focus') focusArea: any
-constructor(private postService:PostService,private route:ActivatedRoute,private fb:FormBuilder,private userService:UserService) { }
+constructor(private postService:PostService,private route:ActivatedRoute,private fb:UntypedFormBuilder,private userService:UserService) { }
 post = this.fb.group({
   postContent:['',[Validators.min(10),Validators.maxLength(250)]]
 });

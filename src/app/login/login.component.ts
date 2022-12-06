@@ -1,6 +1,6 @@
 import { UserService } from 'src/app/Services/user-service.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +9,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private userSerive:UserService,private fb:FormBuilder) { }
+  constructor(private userSerive:UserService,private fb:UntypedFormBuilder) { }
   loginForm = this.fb.group({
   Email:['',[Validators.required,
     Validators.minLength(5),

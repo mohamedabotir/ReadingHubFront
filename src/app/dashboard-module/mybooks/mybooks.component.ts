@@ -1,7 +1,7 @@
 import { environment } from 'src/environments/environment';
 import { ActivatedRoute } from '@angular/router';
 import { BookService } from './../../Services/book-service.service';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faX } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +15,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 })
 export class MybooksComponent implements OnInit {
    formData = new FormData();
-  constructor(private fb:FormBuilder,private bookService:BookService,private route:ActivatedRoute) { }
+  constructor(private fb:UntypedFormBuilder,private bookService:BookService,private route:ActivatedRoute) { }
   publishBookForm = this.fb.group({
     BookName:['',[Validators.required]],
     Description:['',[Validators.required]],
