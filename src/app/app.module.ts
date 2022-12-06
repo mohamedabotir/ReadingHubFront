@@ -22,6 +22,7 @@ import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { AuthorizeToGo } from './Services/autorizetogo';
 import {MatCardModule} from '@angular/material/card';
+import { ExploreComponent } from './dashboard-module/explore/explore.component';
  @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import {MatCardModule} from '@angular/material/card';
     LandingComponent,
      LoginComponent,
      MainComponent,
+     ExploreComponent,
 
 
   ],

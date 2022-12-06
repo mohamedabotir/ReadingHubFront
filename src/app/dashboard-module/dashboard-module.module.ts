@@ -28,6 +28,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MyPostsResolver } from './resolver/MyPosts.resolver';
 import {MatIconModule} from '@angular/material/icon';
 import { MybooksComponent } from './mybooks/mybooks.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -35,10 +36,12 @@ import { MybooksComponent } from './mybooks/mybooks.component';
     DashHomeComponent,
     CommunicateComponent,
     ProfileComponent,
-    MybooksComponent
+    MybooksComponent,
+
   ],
   imports: [
     CommonModule,
+    PdfViewerModule,
     DashboardModuleRoutingModule,
     MatButtonModule,
     MatDialogModule,

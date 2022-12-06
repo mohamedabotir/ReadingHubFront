@@ -1,0 +1,17 @@
+
+<div class="books-container">
+  <div class="row">
+    <div class="col col-lg-4" *ngFor="let item of myBooks;let i=index">
+
+      <div class="book read">
+        <div class="cover">
+          <img src="{{url+item.photo}}">
+        </div>
+        <div class="description">
+          <p class="title">{{item.bookName}}<br>
+            <span class="book-description">{{item.description}}</span></p>
+        </div>
+      </div>
+</div>
+</div>
+</div>

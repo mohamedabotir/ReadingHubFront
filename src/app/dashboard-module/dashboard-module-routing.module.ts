@@ -9,6 +9,8 @@ import { AuthorizeToGo } from '../Services/autorizetogo';
 import { ProfileComponent } from './profile/profile.component';
 import { MyPostsResolver } from './resolver/MyPosts.resolver';
 import { MybooksComponent } from './mybooks/mybooks.component';
+import { ExploreComponent } from './explore/explore.component';
+import { allBooksResolver } from './resolver/allBooks.resolver';
 
 const routes: Routes = [
   {path:'',canActivate:[AuthorizeToGo],
@@ -29,7 +31,11 @@ const routes: Routes = [
       path:'myBooks',component:MybooksComponent,resolve:{
         resolve:myBooksResolver
       }
-    }
+    },
+    {path:'explore',component:ExploreComponent,resolve:{
+      resolve:allBooksResolver
+
+    }}
   ]
 },
 

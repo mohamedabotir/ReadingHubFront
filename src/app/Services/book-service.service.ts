@@ -19,4 +19,7 @@ editBook(book:any){
 getMyBooks(){
 return this.http.get(this.url+"GetMyBooks");
 }
+getAllBooks(page=0){
+return this.http.get(`${this.url}GetAllBooks`)
+}
 }
