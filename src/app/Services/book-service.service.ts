@@ -19,10 +19,15 @@ editBook(book:any){
 getMyBooks(){
 return this.http.get(this.url+"GetMyBooks");
 }
-getAllBooks(page=0){
-return this.http.get(`${this.url}GetAllBooks`)
+async getAllBooks(page=0){
+  var books = await this.http.get(`${this.url}GetAllBooks?pageId=${page}`).toPromise();
+return books;
 }
 GetBookFile(bookId:any){
 return `${this.url}GetBookFile?bookId=${bookId}`;
+}
+async GetBookCount(){
+  var count = await this.http.get(`${this.url}GetBookCount`).toPromise()
+  return  count;
 }
 }

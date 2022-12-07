@@ -29,6 +29,7 @@ import { MyPostsResolver } from './resolver/MyPosts.resolver';
 import {MatIconModule} from '@angular/material/icon';
 import { MybooksComponent } from './mybooks/mybooks.component';
 import { PdfViewerComponent, PdfViewerModule } from 'ng2-pdf-viewer';
+import { Materials } from '../shared/materials';
 
 @NgModule({
   declarations: [
@@ -37,11 +38,12 @@ import { PdfViewerComponent, PdfViewerModule } from 'ng2-pdf-viewer';
     CommunicateComponent,
     ProfileComponent,
     MybooksComponent,
-    
+
 
   ],
   imports: [
     CommonModule,
+    Materials,
     PdfViewerModule,
     DashboardModuleRoutingModule,
     MatButtonModule,

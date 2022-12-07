@@ -16,11 +16,13 @@ export class allBooksResolver implements Resolve<boolean> {
 
 
   }
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
-    return this.bookService.getAllBooks().pipe(
-      catchError(()=>{
-        return "No Books"
-      })
-    );
+   async resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<any> {
+    var booksMode = {
+      booksCount: await this.bookService.GetBookCount(),
+      books: await this.bookService.getAllBooks(0)
+      }
+
+      return booksMode;
+
   }
 }

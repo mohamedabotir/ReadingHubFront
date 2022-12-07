@@ -25,6 +25,7 @@ import {MatCardModule} from '@angular/material/card';
 import { ExploreComponent } from './dashboard-module/explore/explore.component';
 import { BookDisplayComponent } from './shared/book-display/book-display.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { Materials } from './shared/materials';
   @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
   ],
   imports: [
     PdfViewerModule,
+    Materials,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

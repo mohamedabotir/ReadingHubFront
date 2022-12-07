@@ -8,7 +8,7 @@
           OpenBook
           </button>
         <div class="cover">
-          <img src="{{url+item.photo}}">
+          <img [src]="url+item.photo">
         </div>
         <div class="description">
           <p class="title">{{item.bookName}}<br>
@@ -18,7 +18,15 @@
 </div>
 </div>
 </div>
+<mat-paginator
+(page)="nextPage($event)"
+[length]="booksCount"
 
+              [pageSize]="10"
+              [pageSizeOptions]="[10]"
+              aria-label="Select page">
+
+</mat-paginator>
 <ng-container [ngTemplateOutlet]="bookForm">
 
 </ng-container>

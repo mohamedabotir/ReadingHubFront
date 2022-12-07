@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { MatDialog } from '@angular/material/dialog';
 import { pop } from '../profile/publish-post.animation';
 import { faX } from '@fortawesome/free-solid-svg-icons';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-explore',
@@ -19,12 +20,14 @@ pop = false;
 url = environment.baseUrl;
 exit = faX;
 pathSrc="";
+booksCount = 0;
   constructor(private route:ActivatedRoute,private dialog:MatDialog,private bookService:BookService) { }
-@ViewChild('book')dialogRef!:MatDialog;
-  ngOnInit(): void {
+   ngOnInit(): void {
     this.route.data.subscribe(data=>{
-      this.myBooks  = data['resolve'] as [];
-      console.log(this.myBooks);
+      console.log(data)
+      this.myBooks  = data['resolve'].books as [];
+      this.booksCount  = data['resolve'].booksCount as number;
+       console.log(this.myBooks);
      })
   }
  onDisplayBook(book:any){
@@ -34,5 +37,10 @@ pathSrc="";
  this.pathSrc =  this.bookService.GetBookFile(book.id)
 
  }
+  async nextPage(event:any){
+    console.log(event.pageIndex);
+  this.myBooks  =  await this.bookService.getAllBooks(event.pageIndex) as unknown as [];
+  console.log(this.myBooks)
 
+}
 }
