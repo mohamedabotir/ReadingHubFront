@@ -22,4 +22,7 @@ return this.http.get(this.url+"GetMyBooks");
 getAllBooks(page=0){
 return this.http.get(`${this.url}GetAllBooks`)
 }
+GetBookFile(bookId:any){
+return `${this.url}GetBookFile?bookId=${bookId}`;
+}
 }

@@ -23,7 +23,9 @@ import { MainComponent } from './main/main.component';
 import { AuthorizeToGo } from './Services/autorizetogo';
 import {MatCardModule} from '@angular/material/card';
 import { ExploreComponent } from './dashboard-module/explore/explore.component';
- @NgModule({
+import { BookDisplayComponent } from './shared/book-display/book-display.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+  @NgModule({
   declarations: [
     AppComponent,
 
@@ -31,10 +33,12 @@ import { ExploreComponent } from './dashboard-module/explore/explore.component';
      LoginComponent,
      MainComponent,
      ExploreComponent,
+     BookDisplayComponent,
 
 
   ],
   imports: [
+    PdfViewerModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

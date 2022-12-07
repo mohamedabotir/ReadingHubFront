@@ -28,7 +28,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MyPostsResolver } from './resolver/MyPosts.resolver';
 import {MatIconModule} from '@angular/material/icon';
 import { MybooksComponent } from './mybooks/mybooks.component';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { PdfViewerComponent, PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -37,6 +37,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     CommunicateComponent,
     ProfileComponent,
     MybooksComponent,
+    
 
   ],
   imports: [
