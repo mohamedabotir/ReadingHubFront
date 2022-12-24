@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { pop } from '../profile/publish-post.animation';
 import { faX } from '@fortawesome/free-solid-svg-icons';
 import { MatPaginator } from '@angular/material/paginator';
+import { BookDisplayComponent } from 'src/app/shared/book-display/book-display.component';
 
 @Component({
   selector: 'app-explore',
@@ -32,9 +33,13 @@ booksCount = 0;
   }
  onDisplayBook(book:any){
   //var component = new dialog
- // var book = this.dialog.open();
- console.log(book);
- this.pathSrc =  this.bookService.GetBookFile(book.id)
+  this.pathSrc =  this.bookService.GetBookFile(book.id)
+ var dialog = this.dialog.open(BookDisplayComponent,{data:this.pathSrc,panelClass: 'fullscreen-dialog', height: '100%',
+ width: '100%',});
+dialog.afterClosed().subscribe(data=>{
+  console.log({data});
+})
+ console.log(this.pathSrc );
 
  }
   async nextPage(event:any){

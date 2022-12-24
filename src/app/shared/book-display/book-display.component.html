@@ -1,1 +1,15 @@
-<p>book-display works!</p>
+<div class="popup"  *ngIf="pop" @popupParent>
+    <div class="exit-icon">
+      <fa-icon [icon]="exit" (click)="pop=false"></fa-icon>
+    </div>
+    <div  @popupChild>
+      <pdf-viewer [src]="pathSrc"
+              [render-text]="true"
+              [original-size]="false"
+              [show-all]="true"
+
+
+              style="width: 80vw; height: 95vh"
+  ></pdf-viewer>
+     </div>
+  </div>
