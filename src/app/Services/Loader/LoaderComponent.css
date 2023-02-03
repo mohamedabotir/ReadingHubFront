@@ -1,0 +1,11 @@
+.loading{
+  top: -50%;
+  left: 40%;
+  z-index: 999999999999999;
+  position: relative;
+  width: 350px;
+}
+.loading-text{
+  text-align: center;
+  font-size:large;
+}

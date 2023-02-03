@@ -30,6 +30,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { MybooksComponent } from './mybooks/mybooks.component';
 import { PdfViewerComponent, PdfViewerModule } from 'ng2-pdf-viewer';
 import { Materials } from '../shared/materials';
+import { BookComponent } from './book/book.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { Materials } from '../shared/materials';
     CommunicateComponent,
     ProfileComponent,
     MybooksComponent,
+    BookComponent,
 
 
   ],

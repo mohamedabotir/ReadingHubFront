@@ -4,6 +4,7 @@
     <div class="col col-lg-4" *ngFor="let item of myBooks;let i=index">
 
       <div class="book read">
+
         <button (click)="pop=true;onDisplayBook(item)">
           OpenBook
           </button>
@@ -13,7 +14,10 @@
         <div class="description">
           <p class="title">{{item.bookName}}<br>
             <span class="book-description">{{item.description}}</span></p>
+              <p [routerLink]="['/Dashboard/book',item.id]">Details</p>
         </div>
+
+
       </div>
 </div>
 </div>
@@ -47,3 +51,11 @@
      </div>
   </div>
   </ng-template>
+  <mat-form-field appearance="fill" class="status">
+    <mat-select [(value)]="selected">
+     <mat-option>None</mat-option>
+     <mat-option value="option1">Option 1</mat-option>
+     <mat-option value="option2">Option 2</mat-option>
+     <mat-option value="option3">Option 3</mat-option>
+   </mat-select>
+ </mat-form-field>

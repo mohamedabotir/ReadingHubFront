@@ -1,3 +1,4 @@
+import { BookComponent } from './book/book.component';
 import { myBooksResolver } from './resolver/myBooks.resolver';
  import { ProfileResolver } from './resolver/profile.resolver';
 import { DashHomeComponent } from './dash-home/dash-home.component';
@@ -35,7 +36,9 @@ const routes: Routes = [
     {path:'explore',component:ExploreComponent,resolve:{
       resolve:allBooksResolver
 
-    }}
+    }
+  },
+  {path:'book/:id',component:BookComponent}
   ]
 },
 

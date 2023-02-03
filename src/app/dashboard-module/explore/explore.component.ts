@@ -22,6 +22,7 @@ url = environment.baseUrl;
 exit = faX;
 pathSrc="";
 booksCount = 0;
+selected="option1";
   constructor(private route:ActivatedRoute,private dialog:MatDialog,private bookService:BookService) { }
    ngOnInit(): void {
     this.route.data.subscribe(data=>{

@@ -1,3 +1,5 @@
+import { LoaderInterceptor } from './Services/Loader/LoaderInterceptor';
+import { LoaderComponent } from './Services/Loader/LoaderComponent';
 import { UserService } from 'src/app/Services/user-service.service';
  import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -35,7 +37,7 @@ import { Materials } from './shared/materials';
      MainComponent,
      ExploreComponent,
      BookDisplayComponent,
-
+      LoaderComponent
 
   ],
   imports: [
@@ -65,7 +67,12 @@ import { Materials } from './shared/materials';
       provide:HTTP_INTERCEPTORS,
       useClass:AuthorizeInterceptor,
       multi:true
-    }
+    },
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:LoaderInterceptor,
+      multi:true
+    },
   ],
   bootstrap: [AppComponent]
 })

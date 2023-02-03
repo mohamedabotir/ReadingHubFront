@@ -30,4 +30,7 @@ async GetBookCount(){
   var count = await this.http.get(`${this.url}GetBookCount`).toPromise()
   return  count;
 }
+getBook(bookId:number){
+return this.http.get(`${this.url}GetBook?bookId${bookId}`)
+}
 }
