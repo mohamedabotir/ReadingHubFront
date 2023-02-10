@@ -31,6 +31,6 @@ async GetBookCount(){
   return  count;
 }
 getBook(bookId:number){
-return this.http.get(`${this.url}GetBook?bookId${bookId}`)
+return this.http.get(`${this.url}GetBook?bookId=${bookId}`)
 }
 }

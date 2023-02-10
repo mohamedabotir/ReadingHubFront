@@ -1,0 +1,7 @@
+.book img{
+  height: 250px;
+  width: 250px;
+}
+.book .title{
+  font-size: large;
+}
