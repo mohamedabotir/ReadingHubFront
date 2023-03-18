@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookComponent implements OnInit {
   book!: Book;
+  ReaderbookStatus="none";
   url = environment.baseUrl;
 constructor(private route:ActivatedRoute,private bookService:BookService) {
 console.log(this.route.snapshot.params['id']);
