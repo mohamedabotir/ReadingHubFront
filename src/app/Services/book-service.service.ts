@@ -33,4 +33,7 @@ async GetBookCount(){
 getBook(bookId:number){
 return this.http.get(`${this.url}GetBook?bookId=${bookId}`)
 }
+getBooksStatus(){
+  return this.http.get(`${this.url}GetAllBooksStatus`)
+}
 }
