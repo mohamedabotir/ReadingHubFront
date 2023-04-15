@@ -28,6 +28,9 @@ import { ExploreComponent } from './dashboard-module/explore/explore.component';
 import { BookDisplayComponent } from './shared/book-display/book-display.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { Materials } from './shared/materials';
+import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
+import { ToasterInterceptor } from './Services/toaster.interceptor';
+
   @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +62,12 @@ import { Materials } from './shared/materials';
     AngMusicPlayerModule,
     NgbModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    })
   ],
   providers: [
     UserService,
@@ -73,6 +81,12 @@ import { Materials } from './shared/materials';
       useClass:LoaderInterceptor,
       multi:true
     },
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:ToasterInterceptor,
+      multi:true
+    },
+
   ],
   bootstrap: [AppComponent]
 })
