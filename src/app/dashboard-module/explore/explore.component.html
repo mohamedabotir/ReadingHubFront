@@ -13,8 +13,9 @@
         </div>
         <div class="description">
           <p class="title">{{item.bookName}}<br>
-            <span class="book-description">{{item.description}}</span></p>
-              <p [routerLink]="['/Dashboard/book',item.id]">Details</p>
+            <span class="book-description">{{item.description}}</span>
+            <span [routerLink]="['/Dashboard/book',item.id]" class="book-details">Details</span>
+          </p>
         </div>
 
 

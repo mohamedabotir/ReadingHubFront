@@ -24,7 +24,8 @@
 .book {
   display: inline-block;
     width: 184px;
-    height: 390px;
+    height: calc(50vh - 50px);
+   
     box-shadow: 0 0 1px #000;
     margin: 25px;
     padding: 10px 10px 0 10px;
@@ -34,12 +35,11 @@
 }
 .cover {
   border: 2px solid gray;
-  height: 80%;
-  overflow: hidden;
+   overflow: hidden;
 }
 .cover img {
   width: 100%;
-  height: 100%;
+  height: 50%;
 }
 .book p {
   margin-top: 12px;
@@ -47,11 +47,12 @@
   margin-left: 8px;
   max-width: 155px;
   overflow:hidden;
-  max-height: 40px;
 }
 .book .book-description {
   font-size: 15px;
-  overflow: hidden;
+  max-height: 20vh;
+
+  overflow:hidden;
 }
 
 .books-container div div .ng-fa-icon{
@@ -73,4 +74,7 @@
 .statuc{
       width: 150px;
     height: 79px;
+}
+.book-details{
+  cursor: pointer;
 }
