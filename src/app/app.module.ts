@@ -59,7 +59,6 @@ import { ToasterInterceptor } from './Services/toaster.interceptor';
     MatSnackBarModule,
     FontAwesomeModule,
     MatProgressBarModule,
-    AngMusicPlayerModule,
     NgbModule,
     HttpClientModule,
     MatCardModule,
